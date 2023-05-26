@@ -3,4 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :trips
+  validates :name, presence: true, length: { maximum: 100 }
+  validates :about, :address, :language, :country, :interests, :occupation, :visited_places, presence: true
+  validates :age, presence: true, numericality: { only_integer: true }
+  validates :classification, presence: true, numericality: { only_integer: true }
+  validates :host, inclusion: { in: [true, false] }
+  validates :visitor, inclusion: { in: [true, false] }
 end
