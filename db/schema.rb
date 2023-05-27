@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_27_022135) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_27_201627) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "places", force: :cascade do |t|
-    t.string "cities"
-    t.string "countries"
+    t.string "city"
+    t.string "country"
     t.string "neighborhood"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,11 +45,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_27_022135) do
     t.string "language"
     t.string "city"
     t.integer "age"
+    t.string "nacionality"
     t.string "occupation"
     t.string "interests"
     t.string "about"
     t.integer "classification"
-    t.string "visited_places"
     t.boolean "host"
     t.boolean "visitor"
     t.index ["email"], name: "index_users_on_email", unique: true
