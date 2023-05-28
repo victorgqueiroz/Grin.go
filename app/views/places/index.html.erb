@@ -1,14 +1,11 @@
 <div class="container mt-5 mb-5">
   <div class="cards">
-    <h3>Cities</h3>
+  <h1>Vai ser a pagina principal</h1>
+    <h3>Estados</h3>
     <% @places.each_with_index do |place, index| %>
       <%=  link_to root_path(place) do %>
         <div>
-          <ul><%= place.cities %><br></ul>
-          <h3>Countries:</h3>
-          <ul><%= place.countries %><br></ul>
-          <h3>Neighborhood:</h3>
-          <ul><%= place.neighborhood %><br></ul>
+          <ul><%= place.country %><br></ul>
         </div>
       <% end %>
     <% end %>

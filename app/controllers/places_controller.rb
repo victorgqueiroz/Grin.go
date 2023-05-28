@@ -1,10 +1,12 @@
 class PlacesController < ApplicationController
+  before_action :set_place, only: [:show, :edit, :update, :destroy]
+
   def index
     @places = Place.all
   end
 
   def show
-    @place = Place.find(params[:id])
+    # @place = Place.find(params[:id])
   end
 
   def new
@@ -15,45 +17,49 @@ class PlacesController < ApplicationController
     @place = Place.new(place_params)
     @place.user = current_user
     if @place.save
-      redirect_to place_path(@place)
+      redirect_to @place, notice: 'Place was successfully created.'
     else
       render :new
     end
   end
 
   def edit
-    @place = Place.find(params[:id])
+    # @place = Place.find(params[:id]) está no método privado
   end
 
   def update
-    @place = Place.find(params[:id])
-    if @coffee.update(place_params) #caso user prop do place permitir update
-      redirect_to place_path(@place)
+    if @place.update(place_params)
+      redirect_to @place, notice: 'Place was successfully updated.'
     else
       render :edit
     end
   end
 
   def destroy
-    @place = Place.find(params[:id])
+    # @place = Place.find(params[:id]) está no método privado
     @place.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to places_url, notice: 'Place was successfully destroyed.'
   end
 
-  # def my
-  #   @places = Place.where(user: current_user)
-  # end
-
-  # def market
-  #   @coffees = Coffee.global_search(params[:query])
-  #   @coffees = Coffee.all if @coffees.empty?
-
-  #   # @coffees = Coffee.all
-  # end
 
   private
+
+  def set_place
+    @place = Place.find(params[:id])
+  end
 
   def place_params
     params.require(:place).permit(:cities, :countries, :neighborhood)
   end
 end
+
+# def my
+#   @places = Place.where(user: current_user)
+# end
+
+# def market
+#   @coffees = Coffee.global_search(params[:query])
+#   @coffees = Coffee.all if @coffees.empty?
+
+#   # @coffees = Coffee.all
+# end
