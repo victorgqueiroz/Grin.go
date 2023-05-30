@@ -12,13 +12,6 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
     <%= f.input :about, required: true %>
     <%= f.input :address, required: true %>
     <%= f.input :language, required: true %>
@@ -26,8 +19,16 @@
     <%= f.input :occupation, required: true %>
     <%= f.input :nacionality, required: true %>
     <%= f.input :age, required: true %>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
     <%= f.input :host, as: :boolean %>
     <%= f.input :visitor, as: :boolean %>
+    <%# <%= f.input :both, as: :boolean %>
   </div>
 
   <div class="form-actions">
