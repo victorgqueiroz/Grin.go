@@ -3,7 +3,7 @@
   <h1>Vai ser a pagina principal</h1>
     <h3>Estados</h3>
     <% @places.each_with_index do |place, index| %>
-      <%=  link_to root_path(place) do %>
+      <%=  link_to place_path(place) do %>
         <div>
           <ul><%= place.country %><br></ul>
         </div>
