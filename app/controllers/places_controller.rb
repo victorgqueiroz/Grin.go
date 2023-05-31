@@ -1,5 +1,6 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
+  
 
   def index
     @places = Place.all
@@ -40,7 +41,6 @@ class PlacesController < ApplicationController
     @place.destroy
     redirect_to places_url, notice: 'Place was successfully destroyed.'
   end
-
 
   private
 

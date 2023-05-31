@@ -1,13 +1,19 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://zagblogmedia.s3.amazonaws.com/wp-content/uploads/2020/02/10140728/viagem-a-trabalho-scaled.jpg);">
+  <div class="container">
+    <h1>Special Places</h1>
+    <p>Discover amazing destinations.</p>
+  </div>
+</div>
+
 <div class="container mt-5 mb-5">
   <div class="cards">
-  <h1>Vai ser a pagina principal</h1>
-    <h3>Estados</h3>
-    <% @places.each_with_index do |place, index| %>
-      <%=  link_to root_path(place) do %>
-        <div>
-          <ul><%= place.country %><br></ul>
-        </div>
-      <% end %>
+    <% @places.each do |place| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= place.place_photos_url(place.city) %>)">
+        <h2><%= place.city %></h2>
+        <p><%= place.country %></p>
+        <p><%= place.neighborhood %></p>
+        <%= link_to "View Details", place_path(place), class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>
 </div>

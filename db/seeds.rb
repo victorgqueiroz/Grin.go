@@ -33,7 +33,7 @@ require 'faker'
     nacionality: "brazilian",
     host: Faker::Boolean.boolean,
     visitor: Faker::Boolean.boolean,
-    password: ENV['PASSWORD']
+    password: "12345678"
   )
   # puts 'creating places'
 
