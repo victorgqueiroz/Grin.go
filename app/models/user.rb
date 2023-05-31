@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :trips
-  validates :name, presence: true, length: { maximum: 10}
+  validates :name, presence: true, length: { maximum: 100}
   validates :about, :address, :language, :interests, :occupation, :nacionality, presence: true
   validates :age, presence: true, numericality: { only_integer: true }
   validates :classification, numericality: { only_integer: true }
