@@ -1,13 +1,14 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #091bb9;
+  background: #1A65B8;
   color: rgb(255, 255, 255);
   height: 100px;
   margin-bottom: 50px;
+  margin: 0px 60px 0px 60px;
 }
 
 .nav-link {
-  left: -970px;
+  left: -525px;
   font-weight: var(--bs-nav-link-font-weight);
   color: var(--bs-nav-link-color);
   text-decoration: none;
@@ -50,7 +51,6 @@
 .btn-icon{
   background-color: #F4F4F4;
   color: #ffffff;
-  border-radius: 0px 20px 20px 0px;
   &:hover{
     background-color: #F4F4F4;
     color: #ffffff;
@@ -81,6 +81,19 @@
 }
 
 .logo {
-  width: 103px;
-  height: 103px;
+  width: 60px;
+  height: 60px;
+}
+
+.btn-flat {
+  color: #1A65B8;
+  padding: 8px 24px;
+
+  background: #ffffff;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #ffffff;
+  color: #1A65B8;
 }
