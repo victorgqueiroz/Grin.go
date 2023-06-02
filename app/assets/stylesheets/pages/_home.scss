@@ -1,1 +1,77 @@
 // Specific CSS for your home-page
+.container-services{
+  background: white;
+}
+.services{
+
+  // position: absolute;
+  // width: 347px;
+  // height: 69px;
+  // left: 83px;
+  // top: 1066px;
+
+
+
+}
+
+.service-title{
+
+  color: #1A65B8;
+  font-family: 'Jost';
+  font-style: bold;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 69px;
+  text-align: start;
+  padding-left: 25px;
+
+}
+
+.local{
+  padding: 30px;
+}
+
+.local-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.container-guides{
+  background-color: #FFBD42;
+}
+
+.guides h3{
+  text-align: center;
+}
+
+.local-text {
+  margin-right: 250px;
+}
+
+.title{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.guides-title{
+  text-align: center;
+  font-size: 48px;
+  color: #1A65B8;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+}
+
+.guides-header {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.guides{
+  padding: 30px;
+}
