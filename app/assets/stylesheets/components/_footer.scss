@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  background-color: hwb(196 63% 17%);
+  color: #161414;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1em;
+}
+
+.footer-links a {
+  color: #161414;
+}
+
+.footer-copyright {
+  margin-left: auto;
+  padding: 0 1em;
+}
+
+.footer-copyright i {
+  color: #b30404;
+}

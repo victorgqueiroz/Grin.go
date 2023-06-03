@@ -30,22 +30,22 @@ require 'faker'
     interests: Faker::Lorem.words(number: 3).join(', '),
     about: Faker::Lorem.paragraph,
     classification: Faker::Number.between(from: 1, to: 5),
-    visited_places: random_country,
+    nacionality: "brazilian",
     host: Faker::Boolean.boolean,
     visitor: Faker::Boolean.boolean,
-    password: rand
+    password: "12345678"
   )
   # puts 'creating places'
 
   place = Place.create!(
-    cities: Faker::Address.city,
-    countries: Faker::Address.country,
+    city: Faker::Address.city,
+    country: Faker::Address.country,
     neighborhood: Faker::Address.community
     )
     # puts 'creating trip'
 
   # Cria a viagem associada ao usuário e ao lugar
-  Trip.create(
+  Trip.create!(
     user: user,
     place: place,
     review: Faker::Lorem.paragraph
