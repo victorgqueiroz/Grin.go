@@ -1,24 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
-# user = User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: "123123")
-
-require 'faker'
 # require 'pry-byebug'
 
-  # Trip.destroy_all # limpa o db
-  # User.destroy_all # limpa o db
-  # Place.destroy_all # limpa o db
+  Trip.destroy_all # limpa o db
+  User.destroy_all # limpa o db
+  Place.destroy_all # limpa o db
 
 6.times do
   # binding.pry
   # puts 'creating users'
   random_country = Faker::Address.country
+
   user = User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.unique.email,
@@ -36,19 +26,20 @@ require 'faker'
     password: "12345678"
   )
   # puts 'creating places'
+  10.times do
+    place = Place.create!(
+      city: Faker::Address.city,
+      country: Faker::Address.country,
+      neighborhood: Faker::Address.community
+      )
+      # puts 'creating trip'
 
-  place = Place.create!(
-    city: Faker::Address.city,
-    country: Faker::Address.country,
-    neighborhood: Faker::Address.community
+    # Cria a viagem associada ao usuário e ao lugar
+    Trip.create!(
+      user: user,
+      place: place,
+      review: Faker::Lorem.paragraph
+      # Cria alguns locais para cada usuário
     )
-    # puts 'creating trip'
-
-  # Cria a viagem associada ao usuário e ao lugar
-  Trip.create!(
-    user: user,
-    place: place,
-    review: Faker::Lorem.paragraph
-    # Cria alguns locais para cada usuário
-  )
+  end
 end
