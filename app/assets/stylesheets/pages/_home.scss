@@ -1,6 +1,11 @@
 // Specific CSS for your home-page
 .container-services {
   background: white;
+  padding: 20px 0;
+}
+
+.container-services h3 {
+  text-align: center;
 }
 // .services {
 
@@ -11,10 +16,13 @@
 //   // top: 1066px;
 // }
 
-.banner {
-  margin-bottom: 30px;
+#banner-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background-color: #1A65B8;
+  padding: 20px 0;
 }
-
 
 .service-title{
 
@@ -31,6 +39,9 @@
 
 .local {
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .local-row {
@@ -40,7 +51,7 @@
   gap: 30px;
 }
 
-.container-guide {
+.container-guides {
   background-color: #FFBD42;
 }
 
@@ -58,6 +69,11 @@
   flex-direction: column;
 }
 
+.guides {
+  padding: 30px 0 0 0;
+  background-color: #FFBD42;
+}
+
 .guides-title {
   text-align: center;
   font-size: 48px;
@@ -69,15 +85,10 @@
 
 .guides-header {
   display: flex;
-    align-items: center;
+  align-items: center;
     justify-content: center;
     gap: 30px;
-}
-
-.guides {
-  padding: 30px;
-  background-color: #FFBD42;
-}
+  }
 
 .avatar-bordered {
   width: 100px;
@@ -92,7 +103,6 @@
   gap: 118px;
   margin-top: 110px;
   height: 700px;
-
 }
 
 .group-cards {
@@ -119,7 +129,6 @@
   width: 282px;
   height: 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
 }
 
 .card-description {
@@ -140,7 +149,7 @@
 
 .mascot-guitar {
   position: absolute;
-  top: 2367px;
+  top: 2444px;
   left: 0;
 }
 
@@ -149,20 +158,19 @@
   display:flex;
   padding: 20px 0;
   flex-wrap: wrap;
+  // gap: 100px;
 }
 
 .about-header {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+margin-bottom: 150px;
 }
 
 .about-h1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 36px;
-    align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 36px;
+  align-self: center;
 }
 
 .about-h1 img {
@@ -182,21 +190,50 @@
 
   align-self: flex-start;
   height: 300px;
-  
 }
 
 .about-guides {
   display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  gap: 140px;
 }
 
-.btn-flat {
-  color: white;
-  padding: 8px 24px;
-  background: #F76349;
-  transition: background 0.3s ease;
+.about-guides img {
+  width: 350px;
 }
 
-.btn-flat:hover {
-  background: #F76349;
-  color: white;
+.about-guide-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-guide-group h3{
+  color: #1A65B8;
+  font-weight: 600;
+}
+
+.about-guides button {
+
+  background-color: #F76349;
+  width: 159px;
+  height: 59px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.pathway2 {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-left: 545px;
+}
+
+.big-waves {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 120px;
 }
