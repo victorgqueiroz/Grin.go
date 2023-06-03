@@ -1,14 +1,101 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: hwb(196 63% 17%);
+  background: #1A65B8;
+  color: rgb(255, 255, 255);
+  height: 100px;
+  // margin-bottom: 50px;
+  padding: 0px 60px 0px 60px;
+}
+
+.nav-link {
+  left: -525px;
+  font-weight: var(--bs-nav-link-font-weight);
+  color: var(--bs-nav-link-color);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  // position: relative;
+  color:rgb(255, 255, 255);
+}
+
+/* Search_Icon */
+
+#search_input {
+
+  position: relative;
+  width: 400px;
+  height: 42px;
+
+
+}
+
+// #search {
+
+//   position: absolute;
+//   width: 444px;
+//   height: 51px;
+//   right: 100px;
+//   top: 13px;
+
+// }
+
+.input-form {
+  /* Search_Bar */
+
+
+  box-sizing: border-box;
+  border: 2px solid #FFFFFF;
+  border-radius: 20px 0px 0px 20px;
+
+}
+
+.btn-icon{
+  background-color: #F4F4F4;
+  color: #ffffff;
+  &:hover{
+    background-color: #F4F4F4;
+    color: #ffffff;
+  }
+}
+
+#search_btn{
+
+  position: absolute;
+  width: 32px;
+  height: 37px;
+  left: 1240px;
+  top: 32px;
+
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 37px;
+  /* identical to box height */
+
+
+  color: #FFFFFF;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.btn-flat {
+  color: #1A65B8;
+  padding: 8px 24px;
+
+  background: #ffffff;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #ffffff;
+  color: #1A65B8;
 }
 
 .navbar .nav-link {
