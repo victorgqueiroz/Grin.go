@@ -5,4 +5,9 @@ class TripsController < ApplicationController
     @user = User.find(params[:user_id])
     @trips = @user.trips
   end
+
+  def show
+    @user = User.find(params[:id])
+    @review = Review.new  # Add this line
+  end
 end

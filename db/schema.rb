@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_27_201627) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_05_013741) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "images", force: :cascade do |t|
+    t.string "photo"
+    t.string "legend"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "places", force: :cascade do |t|
     t.string "city"
@@ -20,6 +27,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_27_201627) do
     t.string "neighborhood"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "image_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["image_id"], name: "index_reviews_on_image_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "trips", force: :cascade do |t|
@@ -56,6 +73,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_27_201627) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reviews", "images"
+  add_foreign_key "reviews", "users"
   add_foreign_key "trips", "places"
   add_foreign_key "trips", "users"
 end

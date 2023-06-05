@@ -7,12 +7,28 @@
           <p><strong><%= @user.name %>, <%= @user.age %></p></strong>
           <p><%= @user.city %>, <%= @user.nacionality %></p>
           <p><%= @user.occupation %></p>
+      </div>
+      <div class="snippets">
         <fieldset class="form-group check_boxes optional snippet_tags">
-            <legend class="col-form-label pt-0">Tags</legend>
             <input type="hidden" name="snippet[tag_ids][]" value="">
             <div class="tag-item">
               <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="1" name="snippet[tag_ids][]" id="snippet_tag_ids_1">
               <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_1">Shortcut</label>
+            </div>
+            <input type="hidden" name="snippet[tag_ids][]" value="">
+            <div class="tag-item">
+              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="2" name="snippet[tag_ids][]" id="snippet_tag_ids_2">
+              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_2">Shortcut</label>
+            </div>
+            <input type="hidden" name="snippet[tag_ids][]" value="">
+            <div class="tag-item">
+              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="3" name="snippet[tag_ids][]" id="snippet_tag_ids_3">
+              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_3">Shortcut</label>
+            </div>
+            <input type="hidden" name="snippet[tag_ids][]" value="">
+            <div class="tag-item">
+              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="4" name="snippet[tag_ids][]" id="snippet_tag_ids_4">
+              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_4">Shortcut</label>
             </div>
         </fieldset>
       </div>
@@ -29,3 +45,6 @@
       </div>
     <% end %>
   </div>
+<div data-controller="insert-in-list" data-insert-in-list-position-value="beforeend">
+  <!-- [...] -->
+<div>
