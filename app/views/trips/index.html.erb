@@ -1,28 +1,23 @@
 
 <div class="container">
-    <div class="header-user">
-      <img class="avatar-square" alt="avatar-square" src="https://kitt.lewagon.com/placeholder/users/krokrob" />
-      <div class="users-info">
-        <p><%= @user.name %></p>
-        <p><%= @user.age %></p>
-      </div>
-
-    <div class="info-user">
-      <div class="card-product">
-        <p><strong>relevant info</strong></p>
-      </div>
-      <div class="card-product">
-        <p><strong>relevant info</strong></p>
-      </div>
-      <div class="card-product">
-        <p><strong>relevant info</strong></p>
-      </div>
-      <div class="card-product">
-        <p><strong>relevant info</strong></p>
+    <div class="header">
+      <div class="header-user">
+        <img class="avatar-square" alt="avatar-square" src="https://kitt.lewagon.com/placeholder/users/krokrob" />
+        <div class="users-info">
+          <p><strong><%= @user.name %>, <%= @user.age %></p></strong>
+          <p><%= @user.city %>, <%= @user.nacionality %></p>
+          <p><%= @user.occupation %></p>
+        <fieldset class="form-group check_boxes optional snippet_tags">
+            <legend class="col-form-label pt-0">Tags</legend>
+            <input type="hidden" name="snippet[tag_ids][]" value="">
+            <div class="tag-item">
+              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="1" name="snippet[tag_ids][]" id="snippet_tag_ids_1">
+              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_1">Shortcut</label>
+            </div>
+        </fieldset>
       </div>
     </div>
-  </div>
-
+</div>
   <div class="profile-page">
     <% @trips.each do |trip| %>
       <div class="card-trip">
@@ -34,4 +29,3 @@
       </div>
     <% end %>
   </div>
-</div>
