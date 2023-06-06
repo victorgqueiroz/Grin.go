@@ -4,6 +4,8 @@ class TripsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @trips = @user.trips
+    @review = Review.new
+    @trip = Trip.new
   end
 
   def show

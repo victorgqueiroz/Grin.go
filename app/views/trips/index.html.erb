@@ -45,6 +45,25 @@
       </div>
     <% end %>
   </div>
-<div data-controller="insert-in-list" data-insert-in-list-position-value="beforeend">
-  <!-- [...] -->
+
+<h1><%= @user.name %> <small><%= @user.address %></small></h1>
+
+<h2><%= pluralize @trips.size, "review" %></h2>
+
 <div>
+
+  <% @trips.each do |trip| %>
+    <% if trip.review.blank? %>
+       Be the first to leave a review for <%= @user.name %>
+    <% else %>
+      <% @trips.each do |trip| %>
+        <p><%= trip.review %></p>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= simple_form_for([@user, @review]) do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>

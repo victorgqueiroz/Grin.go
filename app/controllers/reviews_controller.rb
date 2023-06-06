@@ -1,17 +1,24 @@
 class ReviewsController < ApplicationController
-  def create
-    @user = User.find(params[:user_id])
-    @review = Review.new(review_params)
-    @review.user = @restaurant
+  skip_before_action :authenticate_user!, only: :create
 
-    respond_to do |format|
-      if @review.save
-        format.html { redirect_to user_path(@user) }
-        format.json # Follow the classic Rails flow and look for a create.json view
-      else
-        format.html { render "users/show", status: :unprocessable_entity }
-        format.json # Follow the classic Rails flow and look for a create.json view
-      end
+  def create
+    @trip = Trip.find(params[:user_id])
+    @user = User.find(params[:user_id])
+    @review = Review.find(params[:user_id])
+    @review = Review.new(review_params)
+    @review.user = @user
+    @review.trip = @trip
+
+    if @review.save
+      redirect_to trip_path(@trip)
+    else
+      render "trips/index", status: :unprocessable_entity
     end
+  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:content, :user_id, :trip_id)
   end
 end
