@@ -1,6 +1,11 @@
 // Specific CSS for your home-page
 .container-services {
   background: white;
+  padding: 20px 0;
+}
+
+.container-services h3 {
+  text-align: center;
 }
 // .services {
 
@@ -11,10 +16,13 @@
 //   // top: 1066px;
 // }
 
-.banner {
-  margin-bottom: 30px;
+#banner-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background-color: #1A65B8;
+  padding: 20px 0;
 }
-
 
 .service-title{
 
@@ -31,6 +39,9 @@
 
 .local {
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .local-row {
@@ -40,7 +51,7 @@
   gap: 30px;
 }
 
-.container-guide {
+.container-guides {
   background-color: #FFBD42;
 }
 
@@ -58,6 +69,11 @@
   flex-direction: column;
 }
 
+.guides {
+  padding: 30px 0 0 0;
+  background-color: #FFBD42;
+}
+
 .guides-title {
   text-align: center;
   font-size: 48px;
@@ -69,15 +85,10 @@
 
 .guides-header {
   display: flex;
-    align-items: center;
+  align-items: center;
     justify-content: center;
     gap: 30px;
-}
-
-.guides {
-  padding: 30px;
-  background-color: #FFBD42;
-}
+  }
 
 .avatar-bordered {
   width: 100px;
@@ -92,7 +103,6 @@
   gap: 118px;
   margin-top: 110px;
   height: 700px;
-
 }
 
 .group-cards {
@@ -119,7 +129,6 @@
   width: 282px;
   height: 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
 }
 
 .card-description {
@@ -140,7 +149,7 @@
 
 .mascot-guitar {
   position: absolute;
-  top: 2367px;
+  top: 2444px;
   left: 0;
 }
 
@@ -149,20 +158,19 @@
   display:flex;
   padding: 20px 0;
   flex-wrap: wrap;
+  // gap: 100px;
 }
 
 .about-header {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+margin-bottom: 150px;
 }
 
 .about-h1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 36px;
-    align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 36px;
+  align-self: center;
 }
 
 .about-h1 img {
@@ -182,21 +190,163 @@
 
   align-self: flex-start;
   height: 300px;
-  
+  margin-left: 32px;
 }
 
 .about-guides {
   display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  gap: 140px;
 }
 
-.btn-flat {
-  color: white;
-  padding: 8px 24px;
-  background: #F76349;
-  transition: background 0.3s ease;
+.about-guides img {
+  width: 350px;
 }
 
-.btn-flat:hover {
-  background: #F76349;
-  color: white;
+.about-guide-group {
+  display: flex;
+  flex-direction: column;
 }
+
+.about-guide-group h3{
+  color: #1A65B8;
+  font-weight: 600;
+}
+
+.about-guides button {
+
+  background-color: #F76349;
+  width: 159px;
+  height: 59px;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.pathway2 {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-left: 545px;
+}
+
+.big-waves {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 120px;
+}
+
+.formulario {
+  width: 100vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user_name {
+  width: 50%;
+  margin-right: 15px;
+}
+
+.user_email {
+  width: 50%;
+}
+
+#premium-text {
+  margin: 40px 0 60px 0;
+  color: #F76349;
+  font-weight: 600;
+}
+
+.enviar {
+  color: #fff;
+  background-color: #F76349;
+  padding: 12px;
+  font-weight: 600;
+  width: 150px;
+  margin-left: 173px;
+  margin-bottom: 60px;
+}
+
+.enviar:hover {
+  color: #fff;
+  background-color: #ff4b2c;
+  padding: 12px;
+  font-weight: 600;
+}
+
+.was-validated .form-control:valid, .form-control.is-valid {
+  border-color: #F76349;
+}
+
+.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
+  color: #F76349;
+}
+
+.was-validated .form-control:valid:focus, .form-control.is-valid:focus {
+  border-color: rgb(247, 99, 73);
+  box-shadow: 0 0 0 0.25rem rgba(247, 103, 78, 0.678);
+}
+
+.form-check {
+  color:#F76349;
+}
+
+.form-check-input[type="checkbox"] {
+  border-color: #F76349;
+}
+
+.form-check-input[type="checkbox"]:checked {
+  background-color: #F76349;
+}
+
+.form-check-input[type="checkbox"]:focus {
+  box-shadow: 0 0 2px 2px rgba(255, 0, 4, 0.5);
+  outline: none;
+}
+
+ .label .form-check-label .boolean .optional {
+  color:  #F76349;
+ }
+
+ .form-control {
+  border-color: #F76349;
+ }
+
+ .form-control:focus {
+  color: #0E0000;
+  background-color: #F4F4F4;
+  border-color: rgb(247, 99, 73);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(247, 103, 78, 0.678);
+}
+
+
+// .was-validated .form-control:valid, .form-control.is-valid {
+//   border-color: #1EDD88;
+//   padding-right: calc(1.5em + 0.75rem);
+//   background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%231EDD88' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e);
+//   background-repeat: no-repeat;
+//   background-position: right calc(0.375em + 0.1875rem) center;
+//   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+// }
+
+
+
+// .form-control {
+
+// }
+
+// .form-control.is-valid, .was-validated .form-control:valid {
+//     border-color: var(--bs-form-valid-border-color);
+//     padding-right: calc(1.5em + 0.75rem);
+//     // background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e);
+//     background-repeat: no-repeat;
+//     background-position: right calc(0.375em + 0.1875rem) center;
+//     background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+// }
