@@ -4,9 +4,9 @@
       <div class="header-user">
         <img class="avatar-square" alt="avatar-square" src="https://kitt.lewagon.com/placeholder/users/krokrob" />
         <div class="users-info">
-          <p><strong><%= @user.name %>, <%= @user.age %></p></strong>
-          <p><%= @user.city %>, <%= @user.nacionality %></p>
-          <p><%= @user.occupation %></p>
+          <p><strong><%= current_user.name %>, <%= current_user.age %></p></strong>
+          <p><%= current_user.city %>, <%= current_user.nacionality %></p>
+          <p><%= current_user.occupation %></p>
       </div>
       <div class="snippets">
         <fieldset class="form-group check_boxes optional snippet_tags">
@@ -31,6 +31,7 @@
               <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_4">Shortcut</label>
             </div>
         </fieldset>
+        <a class="btn btn-flat" href="#">Adicione uma Trip</a>
       </div>
     </div>
 </div>
@@ -42,23 +43,21 @@
             <h2><%= trip.place.city %></h2>
           </div>
           <% if trip.reviews.empty? %>
-       Be the first to leave a review for <%= @user.name %>
+       Be the first to leave a review for <%= current_user.name %>
     <% else %>
-      <% trip.reviews.each do |tr| %>
-        <p><%= tr.review.content %></p>
+      <% trip.reviews.last(10).each do |review| %>
+        <p><%= review.content %></p>
       <% end %>
     <% end %>
         </div>
       </div>
+      <%= simple_form_for [ trip, @review ] do |f| %>
+        <%= f.input :content %>
+        <%= f.button :submit %>
+      <% end %>
     <% end %>
   </div>
 
-<h1><%= @user.name %> <small><%= @user.address %></small></h1>
+<h1><%= current_user.name %> <small><%= current_user.address %></small></h1>
 
 <h2><%= pluralize @trips.size, "review" %></h2>
-
-
-<%= simple_form_for([@user, @review]) do |f| %>
-  <%= f.input :content %>
-  <%= f.button :submit %>
-<% end %>

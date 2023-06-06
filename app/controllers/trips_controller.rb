@@ -9,7 +9,7 @@ class TripsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @trip = Trip.find(params[:id])
     @review = Review.new  # Add this line
   end
 end

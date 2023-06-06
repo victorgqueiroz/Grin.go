@@ -8,4 +8,12 @@ class ProfilesController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+
+  def my
+    @trips = current_user.trips
+    @review = Review.new
+    @trip = Trip.new
+  end
+
+  
 end
