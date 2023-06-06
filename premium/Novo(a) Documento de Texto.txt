@@ -1,0 +1,60 @@
+<div class="formulario">
+
+  <h3 id="premium-text">Faça um upgrade para o Premium </h3>
+
+  <%= simple_form_for(current_user, as: :user, url: registration_path(:user)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs w-100">
+      <div class='d-flex justify-content-around'>
+        <%= f.input :name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "name" } %>
+        <%= f.input :email,
+                    required: true,
+                    input_html: { autocomplete: "email" } %>
+      </div>
+      <div class='d-flex justify-content-around'>
+        <%= f.input :about, required: true %>
+        <%= f.input :address, required: true %>
+      </div>
+      <div class='d-flex justify-content-around'>
+        <%= f.input :language, required: true %>
+        <%= f.input :interests, required: true %>
+      </div>
+      <div class='d-flex justify-content-around'>
+        <%= f.input :occupation, required: true %>
+        <%= f.input :nacionality, required: true %>
+      </div>
+        <%= f.input :age, required: true %>
+
+        <%= f.input :current_password,
+                hint: "we need your current password to confirm your changes",
+                required: true,
+                input_html: { autocomplete: "current-password" } %>
+      <div class="d-flex justify-content-center gap-3">
+        <%= f.input :visitor, as: :boolean, wrapper_html: { id: "visitor-input" } %>
+        <span id="visitor-span" style="display:none"><p> Qualquer coisa</p></span>
+
+        <%= f.input :host, as: :boolean, wrapper_html: { id: "host-input" } %>
+        <span id="host-span" style="display:none"><p> Qualquer coisa 2</p></span>
+      </div>
+    </div>
+
+    <div class="form-actions enviar d-flex justify-content-center">
+      <%= f.button :submit, "Enviar", class: "nav-link" %>
+    </div>
+  <% end %>
+</div>
+
+
+
+<script>
+  document.getElementById('visitor-input').addEventListener('change', function () {
+    document.getElementById('visitor-span').style.display = this.checked ? 'block' : 'none';
+  });
+  document.getElementById('host-input').addEventListener('change', function () {
+    document.getElementById('host-span').style.display = this.checked ? 'block' : 'none';
+  });
+</script>
