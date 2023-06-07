@@ -12,6 +12,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @users = User.where(city: @place.city)
   end
 
   def new
