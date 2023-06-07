@@ -1,13 +1,17 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
-  
+
 
   def index
-    @places = Place.all
+    if params[:query]
+      @place = Place.global_search(params[:query])
+    else
+      @place = Place.all.first(6)
+    end
   end
 
   def show
-    # @place = Place.find(params[:id])
+    @place = Place.find(params[:id])
   end
 
   def new
