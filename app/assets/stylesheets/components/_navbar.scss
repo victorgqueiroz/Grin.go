@@ -152,81 +152,49 @@ input, textarea {
 
 // Input de User e Pass pra logar
 
-.login-all {
-  background-color: #1A65B8;
-}
-
-.user-data-login {
-  width: 538px;
-  background-color: #FFBD42;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 12px;
-  color: #fff;
-  font-weight: 500;
-  margin-left: 793px;
-
-  .um {
-    margin-right: 70px;
-    gap: 20px;
-    display: flex;
-    align-items: center;
-  }
-
-  &,
-  .dois {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-}
-
-.user-data-input {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-input[type="email"],
-input[type="password"] {
-  width: 110px;
-  height: 20px;
-  border: none;
-  background-color: #1A65B8;
-  color: #fff;
-  padding: 5px;
-  outline: none;
-}
-
-
-
-
-// Maxwell Paulo17:05
-// const input = document.getElementById("O ID AQUI")
-// barraCurso
-// Maxwell Paulo17:06
-// input {
-//   caret-color: transparent;
+// .login-all {
+//   background-color: #1A65B8;
 // }
 
+// .user-data-login {
+//   width: 538px;
+//   background-color: #FFBD42;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   padding: 12px;
+//   color: #fff;
+//   font-weight: 500;
+//   margin-left: 793px;
 
-// Definir a cor da barra de cursor igual à cor de fundo do campo de entrada:
+//   .um {
+//     margin-right: 70px;
+//     gap: 20px;
+//     display: flex;
+//     align-items: center;
+//   }
 
-
-// css
-// Copy code
-// input {
-//   caret-color: #FFFFFF; /* Substitua pela cor de fundo do campo */
+//   &,
+//   .dois {
+//     display: flex;
+//     align-items: center;
+//     gap: 20px;
+//   }
 // }
 
+// .user-data-input {
+//   display: flex;
+//   align-items: center;
+//   gap: 30px;
+// }
 
-// Definir um fundo sólido para o campo de entrada e remover a borda:
-
-
-// css
-// Copy code
-// input {
-//   background-color: #FFFFFF; /* Substitua pela cor de fundo desejada */
+// input[type="email"],
+// input[type="password"] {
+//   width: 110px;
+//   height: 20px;
 //   border: none;
+//   background-color: #1A65B8;
+//   color: #fff;
+//   padding: 5px;
+//   outline: none;
 // }
