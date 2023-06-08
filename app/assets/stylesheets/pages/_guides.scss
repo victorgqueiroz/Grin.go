@@ -1,0 +1,99 @@
+.container-guides {
+  background-color: #FFBD42;
+}
+
+.guides {
+  h3 {
+    text-align: center;
+  }
+}
+
+.local-text {
+  margin-right: 250px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.guides {
+  padding: 30px 0 0;
+  background-color: #FFBD42;
+
+  &-title {
+    text-align: center;
+    font-size: 48px;
+    color: #1A65B8;
+    font-family: 'Jost';
+    font-weight: 500;
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+.avatar-bordered {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border: white 5px solid;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 118px;
+  margin-top: 110px;
+  height: 700px;
+}
+
+.group-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.name-card {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 160%;
+  text-align: center;
+  letter-spacing: 0.016em;
+  color: #FFB36B;
+  background: #114783;
+  width: 282px;
+  height: 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card-description {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 282px;
+  height: 207px;
+  padding: 10px;
+  text-align: justify;
+}
+
+.mascot-guitar {
+  position: absolute;
+  top: 2504px;
+  left: 0;
+}
