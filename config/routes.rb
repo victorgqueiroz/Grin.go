@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :places
-  root to: "pages#index"
+  root to: "pages#home"
 
   resources :places, only: :show do
     resources :user, only: :index
