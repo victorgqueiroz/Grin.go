@@ -9,7 +9,7 @@ class PlacesController < ApplicationController
     end
     @trips = @places # ou outra variável dependendo do contexto
   end
-  
+
   # def index
   #   if params[:query]
   #     @place = Place.global_search(params[:query])

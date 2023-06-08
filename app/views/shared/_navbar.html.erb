@@ -42,16 +42,18 @@
         <% end %>
 
 
+        <li class="nav-item dropdown">
+          <% if user_signed_in? %>
+            <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item btn btn-flat", data: {turbo_method: :delete} %>
+          <% else %>
+            <%= link_to "Login", new_user_session_path, class: "btn btn-flat", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+            </div>
+          <% end %>
         </li>
 
-        <li class="nav-item dropdown">
-          <%= link_to "Login", "#", class: "btn btn-flat ", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
-          </div>
-        </li>
       </ul>
 
     </div>
@@ -61,7 +63,7 @@
 
 </div>
 
-    <div class="login-all">
+    <%# <div class="login-all">
       <div class="user-data-login">
         <form action="post" class="user-data-input">
           <div class="um">
@@ -74,4 +76,4 @@
           </div>
         </form>
       </div>
-    </div>
+    </div> %>
