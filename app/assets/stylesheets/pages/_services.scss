@@ -1,0 +1,22 @@
+.service-title {
+  color: #1A65B8;
+  font-family: 'Jost';
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 69px;
+  text-align: start;
+  padding-left: 25px;
+}
+
+.local {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.local-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
