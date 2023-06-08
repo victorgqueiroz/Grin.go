@@ -3,6 +3,8 @@ class Place < ApplicationRecord
   has_many :trips
   validates :city, :country, :neighborhood, presence: true
   gem 'net-http'
+  require 'pg_search/model'
+
 
   def place_photos_url(city)
     country = Place.find_by(city: city).country
