@@ -19,17 +19,17 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.new(trip_params)
-    @trip.user = current_user
-    # @user = User.find(params[:user_id])
-    # @trip = @user.trips.build(trip_params)
-    if @trip.save!
+    @trip = current_user.trips.new(trip_params)
+  
+    if @trip.save
+      # Redirecionar ou renderizar como apropriado
       redirect_to @trip, notice: 'Trip was successfully created.'
     else
+      # Manipular falha na validação
       render :new
     end
   end
-
+  
   def edit
   end
 
@@ -52,6 +52,7 @@ class TripsController < ApplicationController
     end
 
     def trip_params
-      params.require(:trip).permit(:place, :user, :legend)
+      params.require(:trip).permit(:place_id, :legend)
     end
+    
 end
