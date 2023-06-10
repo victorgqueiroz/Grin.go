@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_06_223645) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_10_210458) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,10 +21,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_223645) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "matches", force: :cascade do |t|
+    t.bigint "place_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.integer "guider_id", null: false
+    t.index ["place_id"], name: "index_matches_on_place_id"
+  end
+
   create_table "places", force: :cascade do |t|
     t.string "city"
     t.string "country"
-    t.string "neighborhood" # <<<<-------- é state!!!
+    t.string "neighborhood"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -73,6 +82,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_223645) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "matches", "places"
+  add_foreign_key "matches", "users"
+  add_foreign_key "matches", "users", column: "guider_id"
   add_foreign_key "reviews", "trips"
   add_foreign_key "reviews", "users"
   add_foreign_key "trips", "places"
