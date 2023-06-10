@@ -1,0 +1,83 @@
+.about-us {
+  background-color: #fff;
+  display: flex;
+  padding: 20px 0;
+  flex-wrap: wrap;
+
+  .about-header {
+    margin-bottom: 150px;
+  }
+
+  .about-h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 36px;
+    align-self: center;
+
+    img {
+      width: 135px;
+    }
+
+    h3 {
+      width: 500px;
+      text-align: center;
+      font-size: 40px;
+      line-height: 160%;
+      color: #1A65B8;
+      font-family: 'Jost';
+    }
+  }
+
+  #pathway {
+    align-self: flex-start;
+    height: 300px;
+    margin-left: 32px;
+  }
+
+  .about-guides {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    gap: 140px;
+
+    img {
+      width: 350px;
+    }
+
+    .about-guide-group {
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        color: #1A65B8;
+        font-weight: 600;
+      }
+    }
+
+    button {
+      background-color: #F76349;
+      width: 159px;
+      height: 59px;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+
+  .pathway2 {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-left: 545px;
+  }
+
+  .big-waves {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 120px;
+  }
+}
+

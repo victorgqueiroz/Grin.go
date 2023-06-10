@@ -5,74 +5,73 @@
   height: 100px;
   // margin-bottom: 50px;
   padding: 0px 60px 0px 60px;
+
+  .navbar, a.nav-link {
+    color: #ffffff !important;
+  }
+
+  .navbar, a.nav-link:hover {
+    color: #383838 !important;
+  }
 }
 
 .nav-link {
   left: -525px;
   font-weight: var(--bs-nav-link-font-weight);
-  color: var(--bs-nav-link-color);
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
   // position: relative;
   color:rgb(255, 255, 255);
 }
 
+.navbar-nav.me-auto {
+  align-items: center;
+}
+
 /* Search_Icon */
 
 #search_input {
-
   position: relative;
   width: 400px;
   height: 42px;
-
-
 }
 
 // #search {
-
 //   position: absolute;
 //   width: 444px;
 //   height: 51px;
 //   right: 100px;
 //   top: 13px;
-
 // }
 
 .input-form {
   /* Search_Bar */
-
-
   box-sizing: border-box;
   border: 2px solid #FFFFFF;
   border-radius: 20px 0px 0px 20px;
-
 }
 
-.btn-icon{
+.btn-icon {
   background-color: #F4F4F4;
   color: #ffffff;
-  &:hover{
+
+  &:hover {
     background-color: #F4F4F4;
     color: #ffffff;
   }
 }
 
-#search_btn{
-
+#search_btn {
   position: absolute;
   width: 32px;
   height: 37px;
   left: 1240px;
   top: 32px;
-
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
   font-weight: 900;
   font-size: 32px;
-  line-height: 37px;
-  /* identical to box height */
-
-
+  line-height: 37px; /* identical to box height */
   color: #FFFFFF;
 }
 
@@ -87,17 +86,115 @@
 
 .btn-flat {
   color: #1A65B8;
-  padding: 8px 24px;
-
+  padding: 15px 24px;
   background: #ffffff;
   transition: background 0.3s ease;
-}
 
-.btn-flat:hover {
-  background: #ffffff;
-  color: #1A65B8;
+  &:hover {
+    background: #ffffff;
+    color: #1A65B8;
+  }
 }
 
 .navbar .nav-link {
   color: #161414 !important;
 }
+
+// Search field
+
+.form-control {
+  color: #fff;
+}
+
+input, textarea {
+  caret-color: white;
+}
+
+.search-form-control {
+  position: relative;
+  margin: 0 60px;
+  width: 385px;
+
+  .btn {
+    position: absolute;
+    top: 0px;
+    bottom: 8px;
+    right: 0px;
+    background-color: #F76349;
+    color: #Fff;
+    font-weight: 600;
+    height: 100%;
+  }
+
+  .form-control {
+    height: 3.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border: none;
+    background-color: rgba(255, 255, 255, 0.173);
+
+    &:focus {
+      border: none;
+      background-color: rgba(255, 255, 255, 0.173);
+      outline: none !important;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      color: #Fff;
+    }
+
+    &::placeholder {
+      color: #fff;
+    }
+  }
+}
+
+.container-fluid {
+  width: 1161px;
+}
+
+// Input de User e Pass pra logar
+
+// .login-all {
+//   background-color: #1A65B8;
+// }
+
+// .user-data-login {
+//   width: 538px;
+//   background-color: #FFBD42;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   padding: 12px;
+//   color: #fff;
+//   font-weight: 500;
+//   margin-left: 793px;
+
+//   .um {
+//     margin-right: 70px;
+//     gap: 20px;
+//     display: flex;
+//     align-items: center;
+//   }
+
+//   &,
+//   .dois {
+//     display: flex;
+//     align-items: center;
+//     gap: 20px;
+//   }
+// }
+
+// .user-data-input {
+//   display: flex;
+//   align-items: center;
+//   gap: 30px;
+// }
+
+// input[type="email"],
+// input[type="password"] {
+//   width: 110px;
+//   height: 20px;
+//   border: none;
+//   background-color: #1A65B8;
+//   color: #fff;
+//   padding: 5px;
+//   outline: none;
+// }

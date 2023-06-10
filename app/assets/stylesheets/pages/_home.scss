@@ -2,13 +2,22 @@
 .container-services {
   background: white;
   padding: 20px 0;
+<<<<<<< HEAD
 }
 
 .container-services h3 {
   text-align: center;
 }
 // .services {
+=======
+>>>>>>> master
 
+  h3 {
+    text-align: center;
+  }
+}
+
+// .services {
 //   // position: absolute;
 //   // width: 347px;
 //   // height: 69px;
@@ -17,6 +26,7 @@
 // }
 
 #banner-container {
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   width: 100vw;
@@ -236,4 +246,11 @@ margin-bottom: 150px;
   justify-content: center;
   width: 100vw;
   margin-top: 120px;
+=======
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background-color: #1A65B8;
+  padding: 25px 0 40px 0;
+>>>>>>> master
 }
