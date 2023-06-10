@@ -1,7 +1,154 @@
 <%= render "shared/banner" %>
 
-<div id="services"><%= render "pages/services" %></div>
+
+<div class="container-services services">
 
 <div id="guides"><%= render "pages/guides" %></div>
 
-<div id="about"><%= render "pages/about" %></div>
+    <div class="local">
+
+      <div class="local-row">
+        <%= image_tag "local.png", class: "local-img" %>
+        <p class ="local-text">Aqui você acha a pessoa perfeita para te ajudar nos seua passeios. Esse guia é natural da cidade que você deseja e tem tudo para te mostrar as melhores experiências de sua cidade.</p>
+      </div>
+
+      <div class="local-row">
+        <%= image_tag "tips.png", class: "trip-img" %>
+        <p class ="local-text">No nosso site você também encontra dicas de passeios maravilhosos que podem ser feitos. Como, restaurantes, trilas, baladas, parques e outras atrações locais incríveis.</p>
+      </div>
+
+      <div class="local-row">
+        <%= image_tag "find.png", class: "find" %>
+        <p class ="local-text">Faça sua pesquisa e planeje da melhor forma sua viagem dos sonhos.</p>
+        </div>
+      </div>
+
+    </div>
+
+</div>
+
+
+  <div class="container-guides guides">
+
+    <div class="guides-header">
+
+      <div class="title">
+        <h3 class="guides-title">Guias para a sua viagem!</h3>
+        <%= image_tag "wave.png", class: "wave" %>
+      </div>
+
+      <div class="bee-img">
+        <%= image_tag "bee.png", class: "bee" %>
+      </div>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="group-cards">
+          <div class="avatar-cards">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
+          </div>
+
+          <div class="name-card">
+            <p>Rodrigo</p>
+          </div>
+
+          <div class="card-description">
+            <p>Rodrigo é da cidade do São Paulo vai te mostrar  os melhores barzinhos da região para assistir o jogo do amado time. E os melhores parques para andar de skate.</p>
+
+            <div class="stars-img">
+              <%= image_tag "stars.png", class: "stars" %>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="group-cards">
+          <div class="avatar-cards">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
+          </div>
+
+          <div class="name-card">
+            <p>Josué</p>
+          </div>
+
+          <div class="card-description">
+            <p>Josué vai te mostrar as melhores partes de BH, desde os melhores cafés e queijos do famoso Minas Gerais até as trilhas mais botitas pela cidade histórica.</p>
+
+            <div class="stars-img">
+
+            <%= image_tag "stars.png", class: "stars" %>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="group-cards">
+          <div class="avatar-cards">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
+          </div>
+
+          <div class="name-card">
+            <p>Felipe</p>
+          </div>
+
+          <div class="card-description">
+            <p>Felipe te guiará pela cidade planejada de Brasília,te mostranto passo a passo da cidade.</p>
+            <div class="stars-img">
+              <%= image_tag "stars.png", class: "stars" %>
+            </div>
+          </div>
+
+        </div>
+
+        <%= image_tag "mascot-guitar.png", class: "mascot-guitar" %>
+
+    </div>
+
+  </div>
+
+
+  <div class="about-us">
+
+    <div class="about-header row w-100">
+      <div class="col-2">
+        <%= image_tag "pathway.png", id: "pathway" %>
+      </div>
+      <div class="col-2"> </div>
+      <div class="about-h1 col-4" >
+        <%= image_tag "calendar.png", class: "calendar" %>
+        <h3>Saiba mais sobre nós e como fazer parte</h3>
+      </div>
+    </div>
+
+    <div class="about-guides">
+
+      <%= image_tag "mascot-guide.png" %>
+
+      <div class="about-guide-group">
+        <h3>Para os guias</h3>
+        <p>Faça seu cadastro e começe agora o seu guia com turistas </p>
+        <button>Saiba mais</button>
+      </div>
+
+    </div>
+
+    <div class="pathway2"> <%= image_tag "pathway2.png" %> </div>
+
+    <div class="about-guides">
+
+      <div class="about-guide-group">
+        <h3>Para os turistas</h3>
+        <p> Cadastre-se e ache agora o guia perfeito para o seu passeio </p>
+        <button>Saiba mais</button>
+      </div>
+
+      <%= image_tag "tourist.png" %>
+
+    </div>
+
+    <div class="big-waves"> <%= image_tag "big-waves.png" %> </div>
+
+  </div>

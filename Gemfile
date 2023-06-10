@@ -11,6 +11,9 @@ gem "sprockets-rails"
 gem 'net-http'
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
+gem "pg_search"
+gem "rest-client"
+gem 'city-state'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
