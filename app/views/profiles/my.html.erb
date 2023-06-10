@@ -4,9 +4,9 @@
       <div class="header-user">
         <img class="avatar-square" alt="avatar-square" src="https://kitt.lewagon.com/placeholder/users/krokrob" />
         <div class="users-info">
-          <p><strong><%= current_user.name %>, <%= current_user.age %></p></strong>
-          <p><%= current_user.city %>, <%= current_user.nacionality %></p>
-          <p><%= current_user.occupation %></p>
+          <p><strong><%= @user.name %>, <%= @user.age %></p></strong>
+          <p><%= @user.city %>, <%= @user.nacionality %></p>
+          <p><%= @user.occupation %></p>
       </div>
       <div class="snippets">
         <fieldset class="form-group check_boxes optional snippet_tags">
@@ -43,7 +43,7 @@
             <h2><%= trip.place.city %></h2>
           </div>
           <% if trip.reviews.empty? %>
-       Be the first to leave a review for <%= current_user.name %>
+       Be the first to leave a review for <%= @user.name %>
     <% else %>
       <% trip.reviews.last(10).each do |review| %>
         <p><%= review.content %></p>
@@ -58,6 +58,6 @@
     <% end %>
   </div>
 
-<h1><%= current_user.name %> <small><%= current_user.address %></small></h1>
+<h1><%= @user.name %> <small><%= @user.address %></small></h1>
 
 <h2><%= pluralize @trips.size, "review" %></h2>

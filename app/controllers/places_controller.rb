@@ -1,13 +1,20 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
-  
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @places = Place.all
+    if params[:search].present? && params[:search][:query].present?
+      @places = Place.global_search(params[:search][:query])
+    else
+      @places = Place.select(:country).distinct
+    end
+    @trips = @places # ou outra variável dependendo do contexto
   end
 
+
   def show
-    # @place = Place.find(params[:id])
+    @place = Place.find(params[:id])
+    @users = User.where(city: @place.city)
   end
 
   def new
@@ -49,7 +56,7 @@ class PlacesController < ApplicationController
   end
 
   def place_params
-    params.require(:place).permit(:cities, :countries, :neighborhood)
+    params.require(:place).permit(:city, :country, :neighborhood)
   end
 end
 

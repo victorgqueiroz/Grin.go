@@ -1,37 +1,63 @@
 
 <div class="container">
-    <div class="header-user">
-      <img class="avatar-square" alt="avatar-square" src="https://kitt.lewagon.com/placeholder/users/krokrob" />
-      <div class="users-info">
-        <p><%= @user.name %></p>
-        <p><%= @user.age %></p>
+    <div class="header">
+      <div class="header-user">
+        <img class="avatar-square" alt="avatar-square" src="https://kitt.lewagon.com/placeholder/users/krokrob" />
+        <div class="users-info">
+          <p><strong><%= @user.name %>, <%= @user.age %></p></strong>
+          <p><%= @user.city %>, <%= @user.nacionality %></p>
+          <p><%= @user.occupation %></p>
       </div>
-
-    <div class="info-user">
-      <div class="card-product">
-        <p><strong>relevant info</strong></p>
-      </div>
-      <div class="card-product">
-        <p><strong>relevant info</strong></p>
-      </div>
-      <div class="card-product">
-        <p><strong>relevant info</strong></p>
-      </div>
-      <div class="card-product">
-        <p><strong>relevant info</strong></p>
+      <div class="snippets">
+        <fieldset class="form-group check_boxes optional snippet_tags">
+            <input type="hidden" name="snippet[tag_ids][]" value="">
+            <div class="tag-item">
+              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="1" name="snippet[tag_ids][]" id="snippet_tag_ids_1">
+              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_1">Shortcut</label>
+            </div>
+            <input type="hidden" name="snippet[tag_ids][]" value="">
+            <div class="tag-item">
+              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="2" name="snippet[tag_ids][]" id="snippet_tag_ids_2">
+              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_2">Shortcut</label>
+            </div>
+            <input type="hidden" name="snippet[tag_ids][]" value="">
+            <div class="tag-item">
+              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="3" name="snippet[tag_ids][]" id="snippet_tag_ids_3">
+              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_3">Shortcut</label>
+            </div>
+            <input type="hidden" name="snippet[tag_ids][]" value="">
+            <div class="tag-item">
+              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="4" name="snippet[tag_ids][]" id="snippet_tag_ids_4">
+              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_4">Shortcut</label>
+            </div>
+        </fieldset>
+        <a class="btn btn-flat" href="#">Adicione uma Trip</a>
       </div>
     </div>
-  </div>
-
-  <div class="profile-page">
-    <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <h2>Lugares visitados</h2>
-        </div>
-        
-      </div>
-    </div>
-  </div>
 </div>
+  <div class="profile-page">
+    <% @trips.each do |trip| %>
+      <div class="card-trip">
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= trip.place.city %></h2>
+          </div>
+          <% if trip.reviews.empty? %>
+       Be the first to leave a review for <%= @user.name %>
+    <% else %>
+      <% trip.reviews.last(10).each do |review| %>
+        <p><%= review.content %></p>
+      <% end %>
+    <% end %>
+        </div>
+      </div>
+      <%= simple_form_for [ trip, Review.new ] do |f| %>
+        <%= f.input :content %>
+        <%= f.button :submit %>
+      <% end %>
+    <% end %>
+  </div>
+
+<h1><%= @user.name %> <small><%= @user.address %></small></h1>
+
+<h2><%= pluralize @trips.size, "review" %></h2>

@@ -1,8 +1,10 @@
 class ProfilesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :show
+  before_action :set_place, only: [:show]
+
 
   def show
     @user = User.find(params[:id])
+    @trips = Trip.where(user: @user)
   end
 
   def edit
@@ -15,5 +17,5 @@ class ProfilesController < ApplicationController
     @trip = Trip.new
   end
 
-  
+
 end

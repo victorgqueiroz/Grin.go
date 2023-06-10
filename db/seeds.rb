@@ -1,26 +1,29 @@
-# require 'pry-byebug'
+  # require 'pry-byebug'
+  require "city-state"
 
   Trip.destroy_all # limpa o db
   User.destroy_all # limpa o db
   Place.destroy_all # limpa o db
 
 6.times do
-  # binding.pry
   # puts 'creating users'
-  random_country = Faker::Address.country
+  # debugger
+  random_country = CS.countries.to_a.sample
+  states = CS.states(random_country.first.downcase).to_a.sample
+  city = CS.cities(states.first.downcase, random_country.first.downcase).first
 
   user = User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.unique.email,
     address: Faker::Address.full_address,
     language: Faker::Lorem.word,
-    city: Faker::Address.city,
     age: Faker::Number.between(from: 18, to: 80),
+    city: city,
     occupation: Faker::Job.title,
     interests: Faker::Lorem.words(number: 3).join(', '),
     about: Faker::Lorem.paragraph,
     classification: Faker::Number.between(from: 1, to: 5),
-    nacionality: "brazilian",
+    nacionality: Faker::Nation.nationality,
     host: Faker::Boolean.boolean,
     visitor: Faker::Boolean.boolean,
     password: "12345678"
@@ -28,8 +31,8 @@
   # puts 'creating places'
   10.times do
     place = Place.create!(
-      city: Faker::Address.city,
-      country: Faker::Address.country,
+      city: city,
+      country: random_country.last,
       neighborhood: Faker::Address.community
       )
       # puts 'creating trip'
@@ -38,7 +41,7 @@
     Trip.create!(
       user: user,
       place: place,
-      review: Faker::Lorem.paragraph
+      legend: Faker::Lorem.paragraph
       # Cria alguns locais para cada usuário
     )
   end

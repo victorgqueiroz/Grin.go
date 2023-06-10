@@ -3,6 +3,8 @@ class Place < ApplicationRecord
   has_many :trips
   validates :city, :country, :neighborhood, presence: true
   gem 'net-http'
+  require 'pg_search/model'
+
 
   def place_photos_url(city)
     country = Place.find_by(city: city).country
@@ -16,4 +18,17 @@ class Place < ApplicationRecord
     end
   end
 
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :country, :city ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
+    def fetch_random_city_image
+      response = RestClient.get 'https://api.unsplash.com/photos/random?query=city', {params: {client_id: OC47tUJ8sTjie4ghNrAo03aUPDi_OCxB8FP1rPaohFI}}
+
+      data = JSON.parse(response.body)
+      data["urls"]["small"]
+    end
 end
