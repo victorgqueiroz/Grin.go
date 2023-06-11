@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_10_210458) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_11_211146) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "images", force: :cascade do |t|
     t.string "photo"
@@ -28,6 +34,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_210458) do
     t.integer "user_id", null: false
     t.integer "guider_id", null: false
     t.index ["place_id"], name: "index_matches_on_place_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "chatroom_id", null: false
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -85,6 +101,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_210458) do
   add_foreign_key "matches", "places"
   add_foreign_key "matches", "users"
   add_foreign_key "matches", "users", column: "guider_id"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "reviews", "trips"
   add_foreign_key "reviews", "users"
   add_foreign_key "trips", "places"
