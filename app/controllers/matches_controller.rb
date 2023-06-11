@@ -16,7 +16,7 @@ class MatchesController < ApplicationController
     @match.user = current_user
     @match.place = @place
     if @match.save
-      #@chatroom = chatroom.create(parametros do chat)
+      # @chatroom = chatroom.create(parametros do chat)
       flash[:notice] = "Convite Enviado!"
       redirect_to user_path(@guider)
     else
