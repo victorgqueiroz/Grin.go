@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_11_211146) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_11_231114) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,8 +31,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_11_211146) do
     t.bigint "place_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
     t.integer "guider_id", null: false
+    t.integer "user_id", null: false
     t.index ["place_id"], name: "index_matches_on_place_id"
   end
 
@@ -99,8 +99,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_11_211146) do
   end
 
   add_foreign_key "matches", "places"
-  add_foreign_key "matches", "users"
-  add_foreign_key "matches", "users", column: "guider_id"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "reviews", "trips"
