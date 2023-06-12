@@ -93,14 +93,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_223645) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
   add_foreign_key "matches", "places"
   add_foreign_key "matches", "users"
   add_foreign_key "matches", "users", column: "guider_id"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-=======
->>>>>>> 10c1da91fc3cc826046f45bd15a9c25a98a09b0e
   add_foreign_key "reviews", "trips"
   add_foreign_key "reviews", "users"
   add_foreign_key "trips", "places"
