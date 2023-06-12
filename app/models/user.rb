@@ -5,11 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :trips
-  has_many :guider_matches, class_name: 'Matches',
-  foreign_key: 'guider'
-  has_many :user_matches, class_name: 'Matches',
-  foreign_key: 'user'
-  # has_one_attached :photo
+  has_one_attached :photo
 
   before_validation :initial_classification
 
