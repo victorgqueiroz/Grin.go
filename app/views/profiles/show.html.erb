@@ -7,7 +7,7 @@
           <p><strong><%= @user.name %>, <%= @user.age %></p></strong>
           <p><%= @user.city %>, <%= @user.nacionality %></p>
           <p><%= @user.occupation %></p>
-          <%= link_to "Adicionar uma Trip", new_user_trip_path(@user) %>
+          <%= link_to "Enviar Mensagem", chatroom_path(@user) %>
       </div>
       <div class="snippets">
         <fieldset class="form-group check_boxes optional snippet_tags">
@@ -42,7 +42,6 @@
         <div class="card-trip-infos">
           <div>
             <h2><%= trip.place.city %></h2>
-            <h2><%= trip.legend %></h2>
           </div>
           <% if trip.reviews.empty? %>
        Be the first to leave a review for <%= @user.name %>
@@ -53,9 +52,13 @@
     <% end %>
         </div>
       </div>
-      <%= simple_form_for [ trip, @review ] do |f| %>
+      <%= simple_form_for [ trip, Review.new ] do |f| %>
         <%= f.input :content %>
         <%= f.button :submit %>
       <% end %>
     <% end %>
   </div>
+
+<h1><%= @user.name %> <small><%= @user.address %></small></h1>
+
+<h2><%= pluralize @trips.size, "review" %></h2>

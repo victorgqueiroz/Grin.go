@@ -1,8 +1,0 @@
-<%= simple_form_for([@user, @trip]) do |form| %>
-  <div class="field">
-    <%= form.label :place_id %>
-    <%=  form.collection_select :place_id, @places, :id, :city %>
-    <%= form.input :legend %>
-  </div>
-  <%= form.submit %>
-<% end %>

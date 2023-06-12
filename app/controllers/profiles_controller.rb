@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class ProfilesController < ApplicationController
   before_action :set_place, only: [:show, :edit]
 
 
@@ -16,7 +16,6 @@ class UsersController < ApplicationController
     @review = Review.new
     @trip = Trip.new
     @user = current_user
-    # @profile = current_user.profile
   end
 
 private
@@ -25,8 +24,5 @@ def set_place
   @user = User.find(params[:id])
 end
 
-def profile_params
-  params.require(:profile).permit(:user_id, :place_id, :legend)
-end
 
 end
