@@ -31,7 +31,7 @@
               <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_4">Shortcut</label>
             </div>
         </fieldset>
-        <a class="btn btn-flat" href="#">Adicione uma Trip</a>
+        <%= link_to "New Match", new_user_match_path(@user), class: "btn btn-flat" %>
       </div>
     </div>
 </div>
@@ -51,7 +51,7 @@
     <% end %>
         </div>
       </div>
-      <%= simple_form_for [ trip, @review ] do |f| %>
+      <%= simple_form_for [ trip, Review.new ] do |f| %>
         <%= f.input :content %>
         <%= f.button :submit %>
       <% end %>

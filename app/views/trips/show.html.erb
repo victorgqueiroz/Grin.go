@@ -1,3 +1,6 @@
-<h1><% @trip.reviews.each do |review| %></h1>
+<h1><%= @trip.place.city %></h1>
+<% @trip.reviews.each do |review| %>
   <%= review.content %>
 <% end %>
+
+<%= @trip.legend %>

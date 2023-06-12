@@ -1,0 +1,4 @@
+<%= simple_form_for([@guider, @match]) do |f| %>
+<%= f.input :place, collection: @places.map { |place| [place.city, place.id] }, prompt: "Selecione um local" %>
+<%= f.submit "Dar Match", class: "btn btn-success" %>
+<% end %>
