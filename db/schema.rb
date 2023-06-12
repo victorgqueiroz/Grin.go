@@ -21,6 +21,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_223645) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "matches", force: :cascade do |t|
+    t.bigint "place_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.integer "guider_id", null: false
+    t.index ["place_id"], name: "index_matches_on_place_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "chatroom_id", null: false
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "places", force: :cascade do |t|
     t.string "city"
     t.string "country"
@@ -69,10 +88,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_223645) do
     t.integer "classification"
     t.boolean "host"
     t.boolean "visitor"
+    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
+  add_foreign_key "matches", "places"
+  add_foreign_key "matches", "users"
+  add_foreign_key "matches", "users", column: "guider_id"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
+=======
+>>>>>>> 10c1da91fc3cc826046f45bd15a9c25a98a09b0e
   add_foreign_key "reviews", "trips"
   add_foreign_key "reviews", "users"
   add_foreign_key "trips", "places"
