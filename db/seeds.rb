@@ -1,28 +1,17 @@
   # require 'pry-byebug'
   require "city-state"
 
-  # Trip.destroy_all # limpa o db
-  # User.destroy_all # limpa o db
-  # Place.destroy_all # limpa o db
+  Trip.destroy_all # limpa o db
+  User.destroy_all # limpa o db
+  Place.destroy_all # limpa o db
 
-5.times do
+6.times do
   # puts 'creating users'
   # debugger
   random_country = CS.countries.to_a.sample
   states = CS.states(random_country.first.downcase).to_a.sample
-  if states
-    city = CS.cities(states.first.downcase, random_country.first.downcase).first
-  else
-    city = "São Paulo"
-  end
+  city = CS.cities(states.first.downcase, random_country.first.downcase).first
 
-  place = Place.create!(
-    city: city,
-    country: random_country.last,
-    neighborhood: Faker::Address.community
-    )
-
-10.times do
   user = User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.unique.email,
@@ -39,6 +28,15 @@
     visitor: Faker::Boolean.boolean,
     password: "12345678"
   )
+  # puts 'creating places'
+  10.times do
+    place = Place.create!(
+      city: city,
+      country: random_country.last,
+      neighborhood: Faker::Address.community
+      )
+      # puts 'creating trip'
+
     # Cria a viagem associada ao usuário e ao lugar
     Trip.create!(
       user: user,
