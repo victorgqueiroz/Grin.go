@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
   def show
     # @user = User.find(params[:id])
     @trips = Trip.where(user: @user)
+    @chatroom = Chatroom.new
   end
 
   def edit

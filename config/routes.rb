@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
+
+  resources :users, only: [] do
+    resources :chatrooms, only: [:create]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get "/myprofile", to: "profiles#my", as: :my
   # Defines the root path route ("/")
