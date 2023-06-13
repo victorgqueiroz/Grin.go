@@ -20,7 +20,7 @@ class Place < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [ :country, :city, :user ],
+    against: [ :country, :city ],
     using: {
       tsearch: { prefix: true }
     }
