@@ -1,0 +1,5 @@
+<%= simple_form_for(@trip) do |f| %>
+  <%= f.input :legend %>
+  <%= f.input :place, :collection => Place.all.pluck(:neighborhood) %>
+  <%= f.submit %>
+<% end %>

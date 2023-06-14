@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_233559) do
   create_table "places", force: :cascade do |t|
     t.string "city"
     t.string "country"
-    t.string "neighborhood"
+    t.string "neighborhood" #<<--- é estado
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
