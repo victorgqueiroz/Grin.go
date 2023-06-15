@@ -9,6 +9,12 @@ class MessagesController < ApplicationController
         @chatroom,
         render_to_string(partial: "message", locals: {message: @message})
       )
+
+      NotificationChannel.broadcast_to(
+        @chatroom.first_user == current_user ? @chatroom.second_user : @chatroom.first_user,
+        { chatroom_id: @chatroom.id, content: @message.content, name: @message.user.name }
+      )
+
       head :ok
       else
         render 'chatrooms/show'
