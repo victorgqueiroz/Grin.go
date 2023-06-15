@@ -7,7 +7,9 @@
           <p><strong><%= @user.name %>, <%= @user.age %></p></strong>
           <p><%= @user.city %>, <%= @user.nacionality %></p>
           <p><%= @user.occupation %></p>
-          <%= link_to "Enviar Mensagem", chatroom_path(@user) %>
+          <%= simple_form_for [@user, @chatroom] do |f| %>
+            <%= f.submit "Enviar Mensagem", class: "btn btn-primary" %>
+          <% end %>
       </div>
       <div class="snippets">
         <fieldset class="form-group check_boxes optional snippet_tags">

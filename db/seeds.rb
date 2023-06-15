@@ -1,9 +1,9 @@
   # require 'pry-byebug'
   require "city-state"
 
-  Trip.destroy_all # limpa o db
-  User.destroy_all # limpa o db
-  Place.destroy_all # limpa o db
+  # Trip.destroy_all # limpa o db
+  # User.destroy_all # limpa o db
+  # Place.destroy_all # limpa o db
 
 6.times do
   # puts 'creating users'
