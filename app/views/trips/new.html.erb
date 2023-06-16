@@ -1,8 +1,4 @@
 <%= simple_form_for(@trip) do |f| %>
-  <%= f.input :legend %>
-  <div class="form-group">
-    <label for="trip_place_id">Selecione um local:</label>
-    <%= f.collection_select :place_id, Place.all, :id, :country, {}, class: 'form-control' %>
-  </div>
+<%= render "form_edit", trip: @trip %>
   <%= f.submit %>
 <% end %>
