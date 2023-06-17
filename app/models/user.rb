@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :trips
   has_one_attached :photo
+  belongs_to :place
 
   before_validation :initial_classification
 
