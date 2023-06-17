@@ -20,7 +20,7 @@ class TripsController < ApplicationController
 
   def create
     @trip = current_user.trips.new(trip_params)
-  
+
     if @trip.save
       # Redirecionar ou renderizar como apropriado
       redirect_to @trip, notice: 'Trip was successfully created.'
@@ -29,7 +29,7 @@ class TripsController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
   end
 
@@ -52,7 +52,7 @@ class TripsController < ApplicationController
     end
 
     def trip_params
-      params.require(:trip).permit(:place_id, :legend)
+      params.require(:trip).permit(:place_id, :legend, :photo)
     end
-    
+
 end

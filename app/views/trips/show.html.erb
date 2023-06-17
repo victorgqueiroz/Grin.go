@@ -1,3 +1,4 @@
 <h1><% @trip.reviews.each do |review| %></h1>
   <%= review.content %>
 <% end %>
+  <%= cl_image_tag @trip.photo.key, height: 300, width: 400, crop: :fill %>
