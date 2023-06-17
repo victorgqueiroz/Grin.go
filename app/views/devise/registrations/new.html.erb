@@ -26,7 +26,6 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    <%# <%= f.input :both, as: :boolean %>
     <div class="d-flex">
       <%= f.input :visitor, as: :boolean, wrapper_html: { id: "visitor-input" } %>
       <span id="visitor-span" style="display:none"><p> Qualquer coisa</p></span>
@@ -37,6 +36,7 @@
     </div>
   </div>
 
+  <%= f.input :photo, as: :file %>
   <div class="form-actions">
     <%= f.button :submit, "Sign up", class: "nav-link" %>
   </div>

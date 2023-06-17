@@ -3,5 +3,6 @@
 <%= f.collection_select :place_id, Place.all, :id, :city, {}, class: 'form-control' %>
 <%= f.collection_select :place_id, Place.all, :id, :country, {}, class: 'form-control' %>
 <%= f.collection_select :place_id, Place.all, :id, :neighborhood, {}, class: 'form-control' %>
-
+<%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit %>
 <% end %>
