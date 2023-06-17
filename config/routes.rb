@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :profiles, only: [:show, :edit, :update]
 
-  resources :trips, only: [:index, :show, :new, :create, :delete] do
+  resources :trips, only: [:index, :show, :new, :create, :destroy, :edit, :update] do
     resources :reviews, only: [:create, :show, :index, :new]
   end
 
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get "/myprofile", to: "profiles#my", as: :my
-  get "/trip/:id/edit", to: "trips#edit", as: :edit
+  #get "/trip/:id/edit", to: "trips#edit", as: :edit (Victor)
   # get "/myprofile/trip/new", to: "trips#new", as: :new_trip
   # Defines the root path route ("/")
   # root "articles#index"
