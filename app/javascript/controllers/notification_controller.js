@@ -19,7 +19,7 @@ export default class extends Controller {
 
     Toastify({
       text: `Nova mensagem de ${data.name}: ${data.content}...`,
-      duration: 5000,
+      duration: 10000,
       destination: `chatrooms/${data.chatroom_id}`
     }).showToast();
 
