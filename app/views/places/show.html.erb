@@ -1,11 +1,11 @@
 <div class="row">
 <h1>Lugares</h1>
-  <% @users.each do |user| %>
+  <% @place.users.each do |user| %>
     <div class="col-sm-6 mb-3 mb-sm-0">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"><p>Nome: <strong><%= user.name %></p></h5>
-          <p class="card-text"><p>Cidade: <strong> <%= user.city %></p>
+          <p class="card-text"><p>Cidade: <strong> <%= user.place.city %></p>
           <% if user.host %>
             <p><strong> Tipo:<strong> Host</p>
           <% else %>
