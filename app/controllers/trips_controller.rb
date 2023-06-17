@@ -23,7 +23,7 @@ class TripsController < ApplicationController
 
     if @trip.save
       # Redirecionar ou renderizar como apropriado
-      redirect_to @trip, notice: 'Trip was successfully created.'
+      redirect_to my_path, notice: 'Trip was successfully created.'
     else
       # Manipular falha na validação
       render :new
@@ -36,7 +36,7 @@ class TripsController < ApplicationController
 
   def update
     if @trip.update(trip_params)
-      redirect_to @trip, notice: 'Trip was successfully updated.'
+      redirect_to my_path, notice: 'Trip was successfully updated.'
     else
       render :edit
     end
