@@ -15,7 +15,6 @@ class User < ApplicationRecord
   validates :classification, numericality: { only_integer: true }
   validates :host, inclusion: { in: [true, false] }
   validates :visitor, inclusion: { in: [true, false] }
-
   private
 
   def initial_classification

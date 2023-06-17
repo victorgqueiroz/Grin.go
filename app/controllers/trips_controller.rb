@@ -52,7 +52,7 @@ class TripsController < ApplicationController
     end
 
     def trip_params
-      params.require(:trip).permit(:place_id, :legend, :photo)
+      params.require(:trip).permit(:place_id, :legend, photos: [])
     end
 
 end

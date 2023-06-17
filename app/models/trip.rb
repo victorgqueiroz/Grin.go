@@ -2,7 +2,7 @@ class Trip < ApplicationRecord
   belongs_to :user
   belongs_to :place
 
-  has_one_attached :photo
+  has_many_attached :photos
 
   validates :legend, presence: true
   validates :legend, length: { maximum: 500 }
