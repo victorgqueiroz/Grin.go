@@ -6,7 +6,7 @@ import Toastify from 'toastify-js'
 export default class extends Controller {
   static values = { userId: Number }
 
-  connect() { 
+  connect() {
     console.log(`conectou no notification ${this.userIdValue}`)
     this.channel = createConsumer().subscriptions.create(
       { channel: "NotificationChannel", id: this.userIdValue },
@@ -19,10 +19,9 @@ export default class extends Controller {
 
     Toastify({
       text: `Nova mensagem de ${data.name}: ${data.content}...`,
-      duration: 10000,
+      duration: 5000,
       destination: `chatrooms/${data.chatroom_id}`
     }).showToast();
 
   }
 }
-

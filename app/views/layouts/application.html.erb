@@ -19,8 +19,8 @@
   <body>
     <%= render "shared/navbar" %>
 
-    <% if current_user && controller_name != "chatrooms" %>
-      <div data-controller="notification" class="notification-chat" data-notification-user-id-value="<%= current_user.id %>"> </div>
+   <% if current_user && controller_name != "chatrooms" %>
+      <div data-controller="notification" data-notification-user-id-value="<%= current_user.id %>"> </div>
     <% end %>
 
     <%= yield %>
