@@ -2,7 +2,8 @@
 <html>
   <head>
     <%= favicon_link_tag "favicon.png", rel: "icon", type: "image/png" %>
-    <title>GrinGo</title>
+    <title><%= meta_title  %></title>
+    <meta name="description" content="<%= meta_description %>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,8 +13,6 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-    <title><%= GrinGo %></title>
-    <meta name="description" content="<%= meta_description %>">
 
   </head>
 
