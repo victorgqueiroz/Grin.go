@@ -19,7 +19,13 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = current_user.trips.new(trip_params)
+
+    @trip = current_user.trips.new(trip_params.except(:place))
+    @place = current_user.places.new(place_params[:trip][:place])
+    @place.country = ISO3166::Country[params[:trip][:place][:country]].iso_short_name
+    if @place.save
+      @trip.place = @place
+    end
 
     if @trip.save
       # Redirecionar ou renderizar como apropriado
@@ -35,7 +41,11 @@ class TripsController < ApplicationController
   end
 
   def update
-    if @trip.update(trip_params)
+    if params[:trip][:photos] != [""]
+      @trip.photos.purge
+      @trip.photos.attach(params[:trip][:photos])
+    end
+    if @trip.update(trip_params.except(:photos))
       redirect_to my_path, notice: 'Trip was successfully updated.'
     else
       render :edit
@@ -54,6 +64,10 @@ class TripsController < ApplicationController
 
     def trip_params
       params.require(:trip).permit(:place_id, :legend, photos: [])
+    end
+
+    def place_params
+      params.permit(trip: {place: [:city, :country, :neighborhood]})
     end
 
 end

@@ -1,5 +1,5 @@
 class Place < ApplicationRecord
-  has_many :users
+  belongs_to :user
   has_many :trips
   validates :city, :country, :neighborhood, presence: true
   gem 'net-http'

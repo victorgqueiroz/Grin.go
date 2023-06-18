@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :trips
+  has_many :places
   has_one_attached :photo
-  belongs_to :place
 
   before_validation :initial_classification
 

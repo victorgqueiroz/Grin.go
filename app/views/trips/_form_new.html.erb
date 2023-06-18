@@ -1,8 +1,10 @@
 <%= simple_form_for(@trip) do |f| %>
-<%= f.input :legend %>
-<%= f.collection_select :place_id, Place.all, :id, :city, {}, class: 'form-control' %>
-<%= f.collection_select :place_id, Place.all, :id, :country, {}, class: 'form-control' %>
-<%= f.collection_select :place_id, Place.all, :id, :neighborhood, {}, class: 'form-control' %>
-<%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
+  <%= f.input :legend %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.fields_for :place, @place do |p| %>
+    <%= p.input :city %>
+    <%= p.input :country, collection: ISO3166::Country.all_names_with_codes, include_blank: true %>
+    <%= p.input :neighborhood %>
+  <% end %>
+<%= f.submit %>
 <% end %>
