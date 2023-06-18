@@ -15,9 +15,15 @@
       <% end %>
     <% end %>
   </div>
+  <% else %>
+    <p>Aqui vai a lista de Paises</p>
+    <% @places.each do |place| %>
+      <%= link_to place.country, places_path(search: {query: place.country}) %>
+    <% end %>
+  <% end %>
 
-  <div class="d-flex justify-content-center w-100 mt-5 ">
-      <%= link_to "Escolha outro país!", places_path, class: "btn-cities" %>
+  <div class="d-flex justify-content-center w-100 mt-5">
+      <%= link_to "Voltar", root_path, class: "btn btn-primary w-10" %>
   </div>
 
   <% else %>

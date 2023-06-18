@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :trips
   has_one_attached :photo
+  belongs_to :place
 
   before_validation :initial_classification
 
@@ -15,7 +16,6 @@ class User < ApplicationRecord
   validates :classification, numericality: { only_integer: true }
   validates :host, inclusion: { in: [true, false] }
   validates :visitor, inclusion: { in: [true, false] }
-
   private
 
   def initial_classification

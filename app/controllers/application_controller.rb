@@ -4,9 +4,13 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :about, :address, :language, :interests, :occupation, :nacionality, :age, :classification, :host, :visitor, :photo])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :about, :address, :language, :interests, :occupation, :nacionality, :age, :classification, :host, :visitor, :photo, :place_id, :city])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :about, :address, :language, :interests, :occupation, :nacionality, :age, :classification, :host, :visitor, :photo])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :about, :address, :language, :interests, :occupation, :nacionality, :age, :classification, :host, :visitor, :photo, :place_id, :city])
+  end
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
   end
 end

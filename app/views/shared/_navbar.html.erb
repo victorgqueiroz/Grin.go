@@ -1,6 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
   <div class="container-fluid">
+<<<<<<< HEAD
     <%= link_to root_path(anchor: ""), class: "navbar-brand" do %>
+=======
+    <%= link_to root_path, class: "navbar-brand" do %>
+>>>>>>> f682edaa2d6410866a6f121ce6f5c3aaba5d3a75
       <%= image_tag "logo.png", class: "logo" %>
     <% end %>
 
@@ -11,8 +15,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <%# if user_signed_in? %>
+<<<<<<< HEAD
          <li class="nav-item active">
             <%= link_to "Home", root_path(anchor: ""), class: "nav-link" %>
+=======
+         <li class="nav-item active ">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+>>>>>>> f682edaa2d6410866a6f121ce6f5c3aaba5d3a75
         </li>
 
         <li class="nav-item">
@@ -47,7 +56,7 @@
           <% if user_signed_in? %>
             <%= link_to "Log out", destroy_user_session_path(@user), class: "dropdown-item btn btn-flat", data: {turbo_method: :delete} %>
           <% else %>
-            <%= link_to "Login", new_user_session_path, class: "btn btn-flat", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= link_to "Login", new_user_session_path, class: "btn btn-flat" %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
