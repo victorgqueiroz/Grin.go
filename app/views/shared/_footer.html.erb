@@ -1,13 +1,40 @@
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github fa-fade"></i></a>
-    <a href="#"><i class="fab fa-instagram fa-fade"></i></a>
-    <a href="#"><i class="fab fa-facebook fa-fade"></i></a>
-    <a href="#"><i class="fab fa-twitter fa-fade"></i></a>
-    <a href="#"><i class="fab fa-linkedin fa-fade"></i></a>
-  </div>
 
-  <div class="footer-copyright">
-    This website is made with <i class="fas fa-heart fa-fade"></i> at Le Wagon
+
+<% if current_page?(root_path) %>
+  <div class="footer">
+    <div class="footer-links">
+        <%= link_to "Sobre", "#" %>
+        <%= link_to "Website", "#" %>
+        <%= link_to "Políticas", "#" %>
+        <%= link_to "Contato", "#" %>
+        <%= link_to "Feedback", "#" %>
+    </div>
+
+    <div>
+      <p>©2023 Grin-go</p>
+      <p>Site desenvolvido pelo Grin-go Team</p></div>
+    </div>
+
   </div>
-</div>
+<% else %>
+   <div class="footer footer-other">
+      <div class="footer-links">
+        <%= link_to "Sobre", "#" %>
+        <%= link_to "Website", "#" %>
+        <%= link_to "Políticas", "#" %>
+        <%= link_to "Contato", "#" %>
+        <%= link_to "Feedback", "#" %>
+      </div>
+
+      <div id="gringo-img-footer">
+
+        <p><%= image_tag "mini-mascot.png" %>  ©2023 Grin-go </p>
+        <p> Site desenvolvido pelo Grin-go Team </p>
+      </div>
+    <% if params["search"].present? && params["search"]["query"] != "" %>
+      <%= image_tag "female-tourist.png", class: "female-tourist" %>
+    <% end %>
+    </div>
+
+
+<% end %>

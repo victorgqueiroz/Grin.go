@@ -1,7 +1,0 @@
-<%= simple_form_for(@trip) do |f| %>
-<%= f.input :legend %>
-<%= f.collection_select :place_id, Place.all, :id, :city, {}, class: 'form-control' %>
-<%= f.collection_select :place_id, Place.all, :id, :country, {}, class: 'form-control' %>
-<%= f.collection_select :place_id, Place.all, :id, :neighborhood, {}, class: 'form-control' %>
-
-<% end %>

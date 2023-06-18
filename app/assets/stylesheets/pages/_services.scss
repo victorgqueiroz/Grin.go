@@ -1,3 +1,17 @@
+.container-services {
+  background: white;
+  padding: 50px 0;
+
+}
+
+.container-services h3 {
+  text-align: center;
+}
+
+  h3 {
+    text-align: center;
+  }
+
 .service-title {
   color: #1A65B8;
   font-family: 'Jost';
@@ -6,6 +20,7 @@
   line-height: 69px;
   text-align: start;
   padding-left: 25px;
+
 }
 
 .local {
@@ -15,8 +30,17 @@
   gap: 50px;
 }
 
+.local-text {
+  margin-right: 250px;
+  font-size: 23px;
+}
+
 .local-row {
   display: flex;
   align-items: center;
   gap: 30px;
+}
+
+#services {
+  scroll-padding-top: 100px;
 }

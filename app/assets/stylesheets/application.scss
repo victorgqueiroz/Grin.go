@@ -6,9 +6,10 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
-@import "toastify-js/src/toastify.css";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "devise/index"
+@import "devise/index";
+@import "behaviours/index";
+@import "places/index";

@@ -1,19 +1,26 @@
 .footer {
   display: flex;
-  justify-content: space-between;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
   padding: 1em;
   background-color: #1A65B8;
   color: #ffffff;
+  width: 100vw;
+  height: 300px;
+  text-align: center;
 }
 
 .footer-links {
   display: flex;
-  gap: 1em;
+  gap: 3em;
+  margin-bottom: 40px;
 }
 
 .footer-links a {
   color: #ffffff;
+  text-decoration: none;
 }
 
 .footer-copyright {
@@ -23,4 +30,27 @@
 
 .footer-copyright i {
   color: #b30404;
+}
+
+.footer-root{
+  position: relative;
+}
+
+.footer p {
+  margin-bottom: 5px;
+}
+
+.footer img {
+  width: 30px;
+}
+
+#gringo-img-footer > :first-child {
+  margin-right: 15px;
+}
+
+.footer .female-tourist {
+  position: absolute;
+  bottom: 300px;
+  right: 17px;
+  width: 200px;
 }

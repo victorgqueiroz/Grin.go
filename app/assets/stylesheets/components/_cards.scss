@@ -1,7 +1,26 @@
-.cards{
-position: absolute;
-width: 273px;
-height: 396px;
-left: 134px;
-top: 75px;
+.cards-places {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 60px 185px;
+margin-top: 100px;
+margin-bottom: 79px;
+}
+
+.cards-places a {
+  text-decoration: none;
+  color: #fff;  
+  font-weight: 600;
+}
+
+.city-window {
+  padding-top: 150px;
+  margin-left: 18px;
+}
+
+.card-category {
+  height: 200px;
+  width: 150px;
+  border-radius: 20px;
+  background-size: cover;
 }
