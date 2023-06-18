@@ -21,6 +21,10 @@ class MessagesController < ApplicationController
     end
   end
 
+  def destroy
+    @message.destroy
+  end
+
   private
 
   def message_params
