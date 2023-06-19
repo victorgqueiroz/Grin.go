@@ -1,5 +1,5 @@
 import { Application } from "@hotwired/stimulus"
-require("toastify-js")
+// require("toastify-js")
 const application = Application.start()
 
 // Configure Stimulus development experience
