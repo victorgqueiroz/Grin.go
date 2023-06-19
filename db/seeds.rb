@@ -1,10 +1,10 @@
   # require 'pry-byebug'
   require "city-state"
 
-  # Chatroom.destroy_all
-  # Place.destroy_all # limpa o db
-  # Trip.destroy_all
-  # User.destroy_all # limpa o db
+  Chatroom.destroy_all
+  Place.destroy_all # limpa o db
+  Trip.destroy_all
+  User.destroy_all # limpa o db
 
 6.times do
   # puts 'creating users'
