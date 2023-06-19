@@ -16,9 +16,17 @@ class User < ApplicationRecord
   validates :classification, numericality: { only_integer: true }
   validates :host, inclusion: { in: [true, false] }
   validates :visitor, inclusion: { in: [true, false] }
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :name ],
+    using: {
+      tsearch: { prefix: true }
+    }
   private
 
   def initial_classification
     self.classification = 5
   end
+
 end

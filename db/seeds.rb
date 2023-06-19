@@ -1,10 +1,10 @@
   # require 'pry-byebug'
   require "city-state"
 
-  # Trip.destroy_all # limpa o db
-  # User.destroy_all # limpa o db
+  # Chatroom.destroy_all
   # Place.destroy_all # limpa o db
-  # Message.destroy_all
+  # Trip.destroy_all
+  # User.destroy_all # limpa o db
 
 6.times do
   # puts 'creating users'
@@ -13,13 +13,8 @@
   states = CS.states(random_country.first.downcase).to_a.sample
   city = CS.cities(states.first.downcase, random_country.first.downcase).first
 
-  place = Place.new(
-    city: city,
-    country: random_country.last,
-    neighborhood: Faker::Address.community
-    )
-    20.times do
-      user = User.create!(
+  5.times do
+    user = User.create!(
       name: Faker::Name.name,
       email: Faker::Internet.unique.email,
       address: Faker::Address.full_address,
@@ -33,14 +28,19 @@
       nacionality: Faker::Nation.nationality,
       host: Faker::Boolean.boolean,
       visitor: Faker::Boolean.boolean,
-      password: "12345678",
-      place: place
+      password: "12345678"
     )
     # puts 'creating places'
-    10.times do
+    5.times do
+    place = Place.create!(
+      city: city,
+      country: random_country.last,
+      neighborhood: Faker::Address.community,
+      user_id: user.id
+      )
       Trip.create!(
         user: user,
-        place: place,
+        place_id: place.id,
         legend: Faker::Lorem.paragraph
         # Cria alguns locais para cada usuário
       )
