@@ -16,8 +16,8 @@ class MessagesController < ApplicationController
       )
 
       head :ok
-      else
-        render 'chatrooms/show'
+    else
+      render 'chatrooms/show'
     end
   end
 
