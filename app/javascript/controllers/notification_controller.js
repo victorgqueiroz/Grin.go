@@ -2,6 +2,8 @@ import { Controller } from "@hotwired/stimulus"
 import { createConsumer } from "@rails/actioncable"
 import Toastify from 'toastify-js'
 
+
+
 // Connects to data-controller="notification"
 export default class extends Controller {
   static values = { userId: Number }
