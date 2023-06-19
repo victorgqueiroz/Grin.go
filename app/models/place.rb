@@ -1,6 +1,6 @@
 class Place < ApplicationRecord
-  has_many :users
-  has_many :trips
+  belongs_to :user
+  has_many :trips, dependent: :destroy
   validates :city, :country, :neighborhood, presence: true
   gem 'net-http'
   require 'pg_search/model'

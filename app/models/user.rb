@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :trips
+  has_many :places
   has_one_attached :photo
-  belongs_to :place
 
   before_validation :initial_classification
 
@@ -16,9 +16,17 @@ class User < ApplicationRecord
   validates :classification, numericality: { only_integer: true }
   validates :host, inclusion: { in: [true, false] }
   validates :visitor, inclusion: { in: [true, false] }
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :name ],
+    using: {
+      tsearch: { prefix: true }
+    }
   private
 
   def initial_classification
     self.classification = 5
   end
+
 end
