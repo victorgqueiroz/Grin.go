@@ -13,8 +13,8 @@ application.register("hello", HelloController)
 import InsertInListController from "./insert_in_list_controller"
 application.register("insert-in-list", InsertInListController)
 
-import NotificationController from "./notification_controller"
-application.register("notification", NotificationController)
+// import NotificationController from "./notification_controller"
+// application.register("notification", NotificationController)
 
 import SnackbarController from "./snackbar_controller"
 application.register("snackbar", SnackbarController)
