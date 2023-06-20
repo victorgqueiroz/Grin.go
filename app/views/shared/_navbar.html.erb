@@ -42,8 +42,8 @@
 
         <% end %>
 
-
         <li class="nav-item dropdown">
+          <%= link_to "Meu Perfil", my_path(@user), class: "btn btn-flat" %>
           <% if user_signed_in? %>
             <%= link_to "Log out", destroy_user_session_path(@user), class: "dropdown-item btn btn-flat", data: {turbo_method: :delete} %>
           <% else %>
