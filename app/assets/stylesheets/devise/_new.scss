@@ -6,6 +6,12 @@
   align-items: center;
 }
 
+.login h2 {
+  color: #F76349;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
 .user_email, .user_password {
   display: flex;
   flex-direction: column;
@@ -15,4 +21,52 @@
 .user_remember_me {
   display: flex;
   justify-content: center;
+}
+
+input.btn.btn-flat {
+  background-color: #F76349;
+  color: #fff;
+  margin: 30px 0;
+  font-weight: 600;
+}
+
+#user_remember_me {
+  border: 2px solid #F76349;
+}
+
+.form-control {
+  color: #000;
+}
+
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #F76349;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #f6765fce;
+}
+
+.form-control:hover {
+  border-color: #F76349;
+}
+
+.format-links {
+  text-decoration: none;
+  color: #1A65B8;
+}
+
+.format-links:visited {
+  color: #114d92;
+}
+
+.login-logout {
+  display: flex;
+  position: relative;
+  gap: 40px;
+}
+
+.explorador-sign-up {
+  position: absolute;
+  height: 220px;
+  left: 296px;
 }

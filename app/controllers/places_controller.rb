@@ -14,7 +14,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
-    @users = User.where(city: @place.city)
+    @users = User.joins(:places).where(places: { country: @place.country })
   end
 
   def new

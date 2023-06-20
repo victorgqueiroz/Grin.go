@@ -1,19 +1,23 @@
-<div class="row">
-<h1>Lugares</h1>
-  <% @place.users.each do |user| %>
-    <div class="col-sm-6 mb-3 mb-sm-0">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><p>Nome: <strong><%= user.name %></p></h5>
-          <p class="card-text"><p>Cidade: <strong> <%= user.place.city %></p>
-          <% if user.host %>
-            <p><strong> Tipo:<strong> Host</p>
-          <% else %>
-            <p><strong> Tipo: <strong> Visitor</p>
-          <% end %>
-          <%= link_to "Visitar o perfil", profile_path(user), class: "btn btn-info" %>
+<div class="lugares">
+
+  <h1>Lugares</h1>
+  <% @users.each do |user| %>
+    <% user.places.each do |place| %>
+      <% next if place.city != params[:city] %>
+      <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><p>Nome: <strong><%= user.name %></p></h5>
+            <p class="card-text"><p>Cidade: <strong> <%= place.city %></p>
+            <% if user.host %>
+              <p><strong> Tipo:<strong> Host</p>
+            <% else %>
+              <p><strong> Tipo: <strong> Visitor</p>
+            <% end %>
+            <%= link_to "Visitar o perfil", profile_path(user), class: "btn btn-info" %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>

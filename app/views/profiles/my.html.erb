@@ -47,7 +47,7 @@
 
         <div class="card-trip-infos">
           <%= link_to 'Edit', edit_trip_path(trip), class: 'btn btn-primary' %> <span class="mx-2">|</span>
-          <%= link_to 'Delete', trip_path(trip), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>      <div class="card-trip">
+          <%= link_to 'Delete', trip_path(trip), data: { turbo_method: :delete, confirm: 'Are you sure?' }, class: 'btn btn-danger' %>      <div class="card-trip">
 
           <div>
             <h2><%= trip.place.city %></h2>

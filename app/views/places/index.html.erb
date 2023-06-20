@@ -6,7 +6,7 @@
   <%= image_tag "butterfly.png", class: "butterfly-img" %>
   <div class="cards-places">
     <% @trips.each_with_index do |place, index| %>
-      <%= link_to place_path(place) do %>
+      <%= link_to place_path(place, city: place.city) do %>
         <div class="card-category" style="background-image: url(<%= image[index] %>)">
           <div class="city-window">
             <%= place.city %>
