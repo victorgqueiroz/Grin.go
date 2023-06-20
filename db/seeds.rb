@@ -1,5 +1,5 @@
-  # require 'pry-byebug'
-  require "city-state"
+# require 'pry-byebug'
+require "city-state"
 
   Chatroom.destroy_all
   Place.destroy_all # limpa o db
@@ -7,11 +7,11 @@
   User.destroy_all # limpa o db
 
 6.times do
-  # puts 'creating users'
-  # debugger
-  random_country = CS.countries.to_a.sample
-  states = CS.states(random_country.first.downcase).to_a.sample
-  city = CS.cities(states.first.downcase, random_country.first.downcase).first
+# puts 'creating users'
+# debugger
+random_country = CS.countries.to_a.sample
+states = CS.states(random_country.first.downcase).to_a.sample
+city = CS.cities(states.first.downcase, random_country.first.downcase).first
 
   5.times do
     user = User.create!(

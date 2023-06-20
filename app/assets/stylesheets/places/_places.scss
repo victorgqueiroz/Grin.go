@@ -82,9 +82,10 @@ a.btn-cities:active {
   width: 150px;
 }
 
-// .female-tourist {
-//   position: absolute;
-//   bottom: 50px;
-//   right: 0;
-//   width: 150px;
-// }
+.lugares {
+  min-height: 100vh;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+

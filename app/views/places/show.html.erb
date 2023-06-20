@@ -1,5 +1,6 @@
-<div class="row">
-<h1>Lugares</h1>
+<div class="lugares">
+
+  <h1>Lugares</h1>
   <% @users.each do |user| %>
     <% user.places.each do |place| %>
       <% next if place.city != params[:city] %>
