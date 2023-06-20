@@ -5,3 +5,4 @@
 #subindo o branch cloudnary
 #branch fix de tudo
 #subindo no heroku
+#merge na master 20/06
