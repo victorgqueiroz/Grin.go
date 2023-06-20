@@ -14,8 +14,8 @@
                 input_html: { autocomplete: "email" } %>
     <%= f.input :about, required: true %>
     <%= f.input :address, required: true %>
-    <%= f.collection_select :place_id, Place.all, :id, :country %>
-    <%= f.collection_select :place_id, Place.all, :id, :city %>
+    <%= f.input :country_users, required: true %>
+    <%= f.input :city, required: true %>
     <%= f.input :language, required: true %>
     <%= f.input :interests, required: true %>
     <%= f.input :occupation, required: true %>
@@ -30,11 +30,9 @@
                 input_html: { autocomplete: "new-password" } %>
     <div class="d-flex">
       <%= f.input :visitor, as: :boolean, wrapper_html: { id: "visitor-input" } %>
-      <span id="visitor-span" style="display:none"><p> Qualquer coisa</p></span>
     </div>
     <div class="d-flex">
       <%= f.input :host, as: :boolean, wrapper_html: { id: "host-input" } %>
-      <span id="host-span" style="display:none"><p> Qualquer coisa 2</p></span>
     </div>
   </div>
 

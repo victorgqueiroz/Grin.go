@@ -2,7 +2,11 @@
 <div class="container">
     <div class="header">
       <div class="header-user">
-        <img class="avatar-square" alt="avatar-square" src="https://kitt.lewagon.com/placeholder/users/krokrob" />
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user&.photo&.key, height: 300, width: 400, crop: :fill, class: "avatar-square", alt: "avatar-square" %>
+        <% else %>
+          <%= image_tag "no_profile.jpg", class: "avatar-square", alt: "avatar-square" %>
+        <% end %>
         <div class="users-info">
           <p><strong><%= @user.name %>, <%= @user.age %></p></strong>
           <p><%= @user.city %>, <%= @user.nacionality %></p>
@@ -11,36 +15,17 @@
             <%= f.submit "Enviar Mensagem", class: "btn btn-primary" %>
           <% end %>
       </div>
-      <div class="snippets">
-        <fieldset class="form-group check_boxes optional snippet_tags">
-            <input type="hidden" name="snippet[tag_ids][]" value="">
-            <div class="tag-item">
-              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="1" name="snippet[tag_ids][]" id="snippet_tag_ids_1">
-              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_1">Shortcut</label>
-            </div>
-            <input type="hidden" name="snippet[tag_ids][]" value="">
-            <div class="tag-item">
-              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="2" name="snippet[tag_ids][]" id="snippet_tag_ids_2">
-              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_2">Shortcut</label>
-            </div>
-            <input type="hidden" name="snippet[tag_ids][]" value="">
-            <div class="tag-item">
-              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="3" name="snippet[tag_ids][]" id="snippet_tag_ids_3">
-              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_3">Shortcut</label>
-            </div>
-            <input type="hidden" name="snippet[tag_ids][]" value="">
-            <div class="tag-item">
-              <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="4" name="snippet[tag_ids][]" id="snippet_tag_ids_4">
-              <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_4">Shortcut</label>
-            </div>
-        </fieldset>
-        <a class="btn btn-flat" href="#">Adicione uma Trip</a>
       </div>
     </div>
 </div>
   <div class="profile-page">
     <% @trips.each do |trip| %>
       <div class="card-trip">
+      <% @trips.each do |trip| %>
+      <% trip.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <% end %>
         <div class="card-trip-infos">
           <div>
             <h2><%= trip.place.city %></h2>
@@ -60,7 +45,3 @@
       <% end %>
     <% end %>
   </div>
-
-<h1><%= @user.name %> <small><%= @user.address %></small></h1>
-
-<h2><%= pluralize @trips.size, "review" %></h2>

@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review.trip = @trip
 
     if @review.save
-      redirect_to my_path
+      redirect_to request.referrer
     else
       render :new, status: :unprocessable_entity
     end
