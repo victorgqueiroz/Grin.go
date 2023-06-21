@@ -9,5 +9,5 @@ class NotificationChannel < ApplicationCable::Channel
     transmit(data)
   end
 
-  
+
 end
