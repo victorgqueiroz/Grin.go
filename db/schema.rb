@@ -58,6 +58,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_034654) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "matches", force: :cascade do |t|
+    t.bigint "place_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.integer "guider_id", null: false
+    t.index ["place_id"], name: "index_matches_on_place_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "chatroom_id", null: false
@@ -128,6 +137,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_034654) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "chatrooms", "users", column: "first_user_id"
   add_foreign_key "chatrooms", "users", column: "second_user_id"
+  add_foreign_key "matches", "places"
+  add_foreign_key "matches", "users"
+  add_foreign_key "matches", "users", column: "guider_id"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "places", "users"

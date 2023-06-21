@@ -1,47 +1,62 @@
 
-<div class="container">
+  <div class="container-profile-show">
     <div class="header">
       <div class="header-user">
-      <% if @user.photo.attached? %>
-        <%= cl_image_tag @user&.photo&.key, height: 300, width: 400, crop: :fill, class: "avatar-square", alt: "avatar-square" %>
+
+        <% if @user.photo.attached? %>
+          <%= cl_image_tag @user&.photo&.key, height: 300, width: 400, crop: :fill, class: "avatar-square", alt: "avatar-square" %>
         <% else %>
           <%= image_tag "no_profile.jpg", class: "avatar-square", alt: "avatar-square" %>
         <% end %>
+
         <div class="users-info">
           <p><strong><%= @user.name %>, <%= @user.age %></p></strong>
           <p><%= @user.city %>, <%= @user.nacionality %></p>
           <p><%= @user.occupation %></p>
-          <%= simple_form_for [@user, @chatroom] do |f| %>
-            <%= f.submit "Enviar Mensagem", class: "btn btn-primary" %>
-          <% end %>
-      </div>
-      </div>
-    </div>
-</div>
-  <div class="profile-page">
-    <% @trips.each do |trip| %>
-      <div class="card-trip">
-      <% @trips.each do |trip| %>
-      <% trip.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-      <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= trip.place.city %></h2>
-          </div>
-          <% if trip.reviews.empty? %>
-       Be the first to leave a review for <%= @user.name %>
-    <% else %>
-      <% trip.reviews.last(10).each do |review| %>
-        <p><%= review.content %></p>
-      <% end %>
-    <% end %>
         </div>
+
       </div>
-      <%= simple_form_for [ trip, Review.new ] do |f| %>
-        <%= f.input :content %>
-        <%= f.button :submit %>
-      <% end %>
+
+      <div class="header-user-2">
+        <p><strong>Sobre mim</strong></p>
+        <p><%= @user.about %></p>
+        <%= simple_form_for [@user, @chatroom] do |f| %>
+          <%= f.submit "Adicionar uma trip", class: "input btn btn-flat" %>
+        <% end %>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="profile-page">
+
+    <% @trips.each do |trip| %>
+
+      <div class="comments">
+        <div class="card-trip">
+          <% @trips.each do |trip| %>
+            <% trip.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+          <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= trip.place.city %></h2>
+            </div>
+            <% if trip.reviews.empty? %>
+              <p>Be the first to leave a review for <%= @user.name %></p>
+            <% else %>
+              <% trip.reviews.last(10).each do |review| %>
+                <p><%= review.content %></p>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <%= simple_form_for [ trip, Review.new ] do |f| %>
+          <%= f.input :content %>
+          <%= f.button :submit %>
+        <% end %>
+      </div>
     <% end %>
   </div>
