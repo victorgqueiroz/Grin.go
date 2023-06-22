@@ -1,7 +1,12 @@
   <div id="lugares-title">
-    <h1><%= "Bem-vindo à cidade de <span>#{@place.city}</span>, <span>#{current_user.name}</span>".html_safe %></h1>
 
+    <% if current_user %>
+      <h1><%= "Bem-vindo à cidade de <span>#{@place.city}</span>, <span>#{current_user.name}</span>".html_safe %></h1>
+    <% else %>
+      <h1><%= "Bem-vindo à cidade de <span>#{@place.city}</span>, visitante!".html_safe %></h1>
+    <% end %>
   </div>
+
 <div class="lugares row">
 
     <% @users.each do |user| %>
