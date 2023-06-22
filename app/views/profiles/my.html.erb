@@ -1,49 +1,60 @@
 <div class="container">
-    <div class="header">
-      <div class="header-user">
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user&.photo&.key, height: 300, width: 400, crop: :fill, class: "avatar-square", alt: "avatar-square" %>
-        <% else %>
-          <%= image_tag "no_profile.jpg", class: "avatar-square", alt: "avatar-square" %>
-        <% end %>
-        <div class="users-info">
-          <p><strong><%= @user.name %>, <%= @user.age %></p></strong>
-          <p><%= @user.city %>, <%= @user.nacionality %></p>
-          <p><%= @user.occupation %></p>
-      </div>
-        <%= link_to "Adicione uma Trip", new_trip_path, class: "btn btn-primary" %>
-      </div>
-    </div>
-</div>
-  <div class="profile-page">
-
-    <% @trips.each do |trip| %>
-      <% trip.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="header">
+    <div class="header-user">
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user&.photo&.key, height: 300, width: 400, crop: :fill, class: "avatar-square", alt: "avatar-square" %>
+      <% else %>
+        <%= image_tag "no_profile.jpg", class: "avatar-square", alt: "avatar-square" %>
       <% end %>
+      <div class="users-info">
+        <p><strong><%= @user.name %>, <%= @user.age %></p></strong>
+        <p><%= @user.city %>, <%= @user.nacionality %></p>
+        <p><%= @user.occupation %></p>
+      </div>
+      <%= link_to "Adicione uma Trip", new_trip_path, class: "btn btn-primary trip-add" %>
+    </div>
+   </div>
+</div>
 
-        <div class="card-trip-infos">
-          <%= link_to 'Edit', edit_trip_path(trip), class: 'btn btn-primary' %> <span class="mx-2">|</span>
-          <%= link_to 'Delete', trip_path(trip), data: { turbo_method: :delete, confirm: 'Are you sure?' }, class: 'btn btn-danger' %> 
-          <div class="card-trip">
+<div class="profile-page">
+
+  <% @trips.each do |trip| %>
+
+    <% trip.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+
+      <div class="card-trip-infos">
+
+        <%= link_to 'Edit', edit_trip_path(trip), class: 'btn btn-primary' %> <span class="mx-2">|</span>
+        <%= link_to 'Delete', trip_path(trip), data: { turbo_method: :delete, confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+
+        <div class="card-trip">
 
           <div>
             <h2><%= trip.place.city %></h2>
             <h2><%= trip.legend %></h2>
           </div>
-          <% if trip.reviews.empty? %>
-       Be the first to leave a review for <%= @user.name %>
-    <% else %>
-      <% trip.reviews.last(10).each do |review| %>
 
-        <p><%= review.content %></p>
-      <% end %>
-    <% end %>
         </div>
+
+          <div class="comments">
+            <% if trip.reviews.empty? %>
+              Seja o primeiro a deixar um review para <%= @user.name %>
+            <% else %>
+              <% trip.reviews.last(10).each do |review| %>
+                <p><%= review.content %></p>
+              <% end %>
+            <% end %>
+          </div>
+
       </div>
+
       <%= simple_form_for [ trip, @review ] do |f| %>
         <%= f.input :content %>
         <%= f.button :submit %>
       <% end %>
-    <% end %>
-  </div>
+
+  <% end %>
+
+</div>

@@ -44,15 +44,17 @@
             <div>
               <h2><%= trip.place.city %></h2>
             </div>
-            <% if trip.reviews.empty? %>
-              <p>Be the first to leave a review for <%= @user.name %></p>
-            <% else %>
-              <% trip.reviews.last(10).each do |review| %>
-                <p><%= review.content %></p>
-              <% end %>
-            <% end %>
           </div>
         </div>
+            <div class="comments">
+              <% if trip.reviews.empty? %>
+                <p>Be the first to leave a review for <%= @user.name %></p>
+              <% else %>
+                <% trip.reviews.last(10).each do |review| %>
+                  <p><%= review.content %></p>
+                <% end %>
+              <% end %>
+            </div>
         <%= simple_form_for [ trip, Review.new ] do |f| %>
           <%= f.input :content %>
           <%= f.button :submit %>

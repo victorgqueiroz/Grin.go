@@ -46,12 +46,12 @@
           <% if user_signed_in? %>
 
             <div class="my-profile-button">
-              <%= link_to "Meu Perfil", my_path(@user), class: "btn btn-flat btn-profile" %>
+              <%= link_to "Meu Perfil", my_path(@user), class: "btn btn-flat btn-profile", onmouseover: "moverDiv2()", onmouseout: "pararDiv2()"%>
               <%= image_tag "passport-login.png", class: "passport" %>
             </div>
 
             <div class="my-logout-button">
-              <%= link_to "Log out", destroy_user_session_path(@user), class: "dropdown-item btn btn-flat btn-logout", data: {turbo_method: :delete} %>
+              <%= link_to "Sair", destroy_user_session_path(@user), class: "dropdown-item btn btn-flat btn-logout", data: {turbo_method: :delete} %>
             </div>
 
           <% else %>
