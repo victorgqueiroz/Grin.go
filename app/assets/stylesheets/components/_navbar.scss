@@ -155,3 +155,38 @@ input, textarea {
 .container-fluid {
   width: 1184px;
 }
+
+.dropup, .dropend, .dropdown, .dropstart, .dropup-center, .dropdown-center {
+  position: relative;
+}
+
+.btn-profile {
+  background-color: #fff;
+  color: #000;
+  padding: 5px 14px;
+  font-size: 16px;
+}
+
+
+.btn-logout {
+  padding: 1px 0;
+  background-color: #F76349;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+.btn-logout:hover {
+  background-color: #ff330f;
+  color:#fff ;
+}
+
+.passport {
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 0;
+  width: 47px;
+  z-index: -1;
+  transition: transform 1s;
+}

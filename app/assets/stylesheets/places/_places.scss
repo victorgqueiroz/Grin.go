@@ -83,9 +83,29 @@ a.btn-cities:active {
 }
 
 .lugares {
+  padding: 30px;
   min-height: 100vh;
   padding-top: 100px;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
+.card-body .avatar-square {
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  left: 276px;
+  border-radius: 27px;
+  top: 110px;
+}
+
+#lugares-title {
+  margin-top: 183px;
+  text-align: center;
+}
+
+#lugares-title span {
+  color: #F76349;
+  font-weight: bold;
+}
