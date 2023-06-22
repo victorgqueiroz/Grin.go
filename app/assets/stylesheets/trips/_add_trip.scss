@@ -6,13 +6,14 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  text-align: center;
+
 }
 
 .trip-form h1 {
   margin: 0 0 75px 0;
   color: #1A65B8;
   font-weight: 600;
+  text-align: center;
 }
 
 .trip_legend, .trip_photos, .trip_place_city, .trip_place_neighborhood {
@@ -34,7 +35,7 @@
 }
 
 .btn-create-trip {
-  margin-top: 20px;
+  margin-top: 50px;
   margin-left: 18px;
 }
 
