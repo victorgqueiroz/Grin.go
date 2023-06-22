@@ -52,12 +52,12 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.card-trip > img {
-  height: 225px;
-  width: 292px;
-  // -o-object-fit: cover;
-  // object-fit: cover;
-}
+// .card-trip > img {
+//   height: 225px;
+//   width: 292px;
+//   // -o-object-fit: cover;
+//   // object-fit: cover;
+// }
 
 .card-trip h2 {
   text-align: center;
@@ -82,4 +82,8 @@
   width: 200px;
   text-align: center;
   overflow-wrap: break-word;
+}
+
+.stamp {
+  width: 60px;
 }
