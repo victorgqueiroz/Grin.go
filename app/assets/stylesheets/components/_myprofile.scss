@@ -1,0 +1,20 @@
+.trips-container-my{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: bisque;
+    width: 621px;
+}
+
+.button-myprofile{
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+}
+
+.button-myprofile:hover{
+  background: #4D04C4;
+  color: white;
+}
