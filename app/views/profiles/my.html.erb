@@ -19,7 +19,7 @@
 <div class="profile-page">
 
   <% @trips.each do |trip| %>
-
+  <div class="trips-container-my">
     <% trip.photos.each do |photo| %>
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
@@ -37,7 +37,6 @@
           </div>
 
         </div>
-
           <div class="comments">
             <% if trip.reviews.empty? %>
               Seja o primeiro a deixar um review para <%= @user.name %>
@@ -52,9 +51,10 @@
 
       <%= simple_form_for [ trip, @review ] do |f| %>
         <%= f.input :content %>
-        <%= f.button :submit %>
+        <%= f.button :submit, class:"button-myprofile" %>
       <% end %>
 
-  <% end %>
+    <% end %>
+  </div>
 
 </div>
