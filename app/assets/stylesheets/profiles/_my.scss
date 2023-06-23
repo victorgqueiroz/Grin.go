@@ -6,7 +6,7 @@
   position: static;
   width: 100px;
   height: 48px;
-  margin-left: 23px;
+  margin-left: 35px;
   background-color: #F76349;
   border: none;
   font-size: 12px;
@@ -89,10 +89,10 @@
 //   // object-fit: cover;
 // }
 
-// .card-trip h2 {
-//   text-align: center;
-//   margin-bottom: 20px;
-// }
+.card-trip h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 .comments {
   display: flex;
@@ -100,14 +100,13 @@
   align-items: center;
   text-align: center;
   width: 600px;
-  margin-bottom: 71px;
+  margin-bottom: 15px;
   background-color: #ffffff;
 }
 
 .comments p {
   color: #000000;
   background-color: #dfdfdf;
-  /* border: 3px solid #F76349; */
   border-radius: 5px;
   margin-top: 15px;
   padding: 5px 10px;
@@ -126,6 +125,7 @@ input.btn {
   background: #F76349;
   margin-left: 57px;
   color: #fff;
+  margin-bottom: 60px;
 }
 
 
@@ -159,7 +159,8 @@ input.btn {
   width: 200px;
   height: 200px;
   margin: 5px;
-  background-size: contain;
+  // background-size: contain;
+  object-fit: cover;
 }
 
 .edit-delete {
