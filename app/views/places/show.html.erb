@@ -1,4 +1,12 @@
-  <h1>Lugares</h1>
+  <div id="lugares-title">
+
+    <% if current_user %>
+      <h1><%= "Bem-vindo à cidade de <span>#{@place.city}</span>, <span>#{current_user.name}</span>".html_safe %></h1>
+    <% else %>
+      <h1><%= "Bem-vindo à cidade de <span>#{@place.city}</span>, visitante!".html_safe %></h1>
+    <% end %>
+  </div>
+
 <div class="lugares row">
 
     <% @users.each do |user| %>
@@ -16,6 +24,7 @@
                 <p><strong> Tipo: </strong> Visitor</p>
               <% end %>
               <%= link_to "Visitar o perfil", profile_path(user), class: "btn btn-info" %>
+              <%= image_tag "no_profile.jpg", class: "avatar-square avatar-position", alt: "avatar-square" %>
             </div>
           </div>
   </div>

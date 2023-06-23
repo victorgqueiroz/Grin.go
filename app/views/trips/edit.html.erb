@@ -1,8 +1,17 @@
-<%= simple_form_for(@trip) do |f| %>
-<%= f.input :legend %>
-<%= f.collection_select :place_id, Place.all, :id, :city, {}, class: 'form-control' %>
-<%= f.collection_select :place_id, Place.all, :id, :country, {}, class: 'form-control' %>
-<%= f.collection_select :place_id, Place.all, :id, :neighborhood, {}, class: 'form-control' %>
-<%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
-<% end %>
+<div class="trip-form">
+
+  <%= image_tag "add_trip.png", class: "add-trip-edit" %>
+
+  <%= simple_form_for(@trip) do |f| %>
+  <%= f.input :legend %>
+  <p>ㅤCidade:</p>
+  <%= f.collection_select :place_id, Place.all, :id, :city, {}, class: 'form-control'%>
+  <p>ㅤPaís:</p>
+  <%= f.collection_select :place_id, Place.all, :id, :country, {}, class: 'form-control' %>
+  <p>ㅤBairro:</p>
+  <%= f.collection_select :place_id, Place.all, :id, :neighborhood, {}, class: 'form-control' %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <div class="btn-create-trip"><%= f.submit 'Atualizar' %></div>
+  <% end %>
+
+</div>

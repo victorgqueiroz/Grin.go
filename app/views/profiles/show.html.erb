@@ -21,7 +21,7 @@
         <p><strong>Sobre mim</strong></p>
         <p><%= @user.about %></p>
         <%= simple_form_for [@user, @chatroom] do |f| %>
-          <%= f.submit "Adicionar uma trip", class: "input btn btn-flat" %>
+          <%= f.submit "Conversar", class: "input btn btn-flat" %>
         <% end %>
       </div>
 
@@ -35,6 +35,7 @@
 
       <div class="comments">
         <div class="card-trip">
+      <%= image_tag "stamp", class:"stamp" %>
           <% @trips.each do |trip| %>
             <% trip.photos.each do |photo| %>
               <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
@@ -44,15 +45,17 @@
             <div>
               <h2><%= trip.place.city %></h2>
             </div>
-            <% if trip.reviews.empty? %>
-              <p>Be the first to leave a review for <%= @user.name %></p>
-            <% else %>
-              <% trip.reviews.last(10).each do |review| %>
-                <p><%= review.content %></p>
-              <% end %>
-            <% end %>
           </div>
         </div>
+            <div class="comments">
+              <% if trip.reviews.empty? %>
+                <p>Be the first to leave a review for <%= @user.name %></p>
+              <% else %>
+                <% trip.reviews.last(10).each do |review| %>
+                  <p><%= review.content %></p>
+                <% end %>
+              <% end %>
+            </div>
         <%= simple_form_for [ trip, Review.new ] do |f| %>
           <%= f.input :content %>
           <%= f.button :submit %>

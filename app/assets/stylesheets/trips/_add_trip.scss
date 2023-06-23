@@ -1,0 +1,74 @@
+.trip-form {
+  margin-top: 100px;
+  padding: 80px 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+
+.trip-form h1 {
+  margin: 0 0 75px 0;
+  color: #1A65B8;
+  font-weight: 600;
+  text-align: center;
+}
+
+.trip_legend, .trip_photos, .trip_place_city, .trip_place_neighborhood {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  width: 457px;
+}
+
+.trip_place_country {
+  margin-left: 20px;
+  width: 457px;
+}
+
+.form-select:focus {
+  border-color: #F76349;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #f6765fce;
+}
+
+.btn-create-trip {
+  margin-top: 50px;
+  margin-left: 18px;
+}
+
+.btn-create-trip input {
+  background-color: #F76349;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  padding: 20px 15px;
+}
+
+.add-trip {
+  width: 200px;
+  top: 305px;
+  right: 240px;
+  position: absolute;
+}
+
+.add-trip-edit {
+  width: 200px;
+  top: 126px;
+  right: 240px;
+  position: absolute;
+}
+
+.add-trip2 {
+  width: 200px;
+  top: 386px;
+  left: 240px;
+  position: absolute;
+}
+
+.trip-form .form-control {
+
+  margin-bottom: 23px;
+}

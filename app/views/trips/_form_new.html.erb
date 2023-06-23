@@ -1,10 +1,18 @@
-<%= simple_form_for(@trip) do |f| %>
-  <%= f.input :legend %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.fields_for :place, @place do |p| %>
-    <%= p.input :city %>
-    <%= p.input :country, collection: ISO3166::Country.all_names_with_codes, include_blank: true %>
-    <%= p.input :neighborhood %>
+<div class="trip-form">
+
+  <%= image_tag "add_trip.png", class: "add-trip" %>
+  <%# <%= image_tag "add_trip2.png", class: "add-trip2" %>
+
+  <h1>Adicione uma trip!</h1>
+
+  <%= simple_form_for(@trip) do |f| %>
+    <%= f.input :legend, label: 'Legenda' %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Fotos' %>
+    <%= f.fields_for :place, @place do |p| %>
+      <%= p.input :city, label: 'Cidade' %>
+      <%= p.input :country, collection: ISO3166::Country.all_names_with_codes, include_blank: true, label: 'País' %>
+      <%= p.input :neighborhood, label: 'Bairro' %>
+    <% end %>
+  <div class="btn-create-trip"><%= f.submit 'Criar uma Trip' %></div>
   <% end %>
-<%= f.submit %>
-<% end %>
+</div>

@@ -37,15 +37,15 @@
     </div>
   </div>
 
-  <%= f.input :photo, as: :file %>
+  <%= f.input :photo, as: :file, input_html: { class: 'custom-photo-input' } %>
   <div class="form-actions">
     <%= f.button :submit, "Sign up", class: "nav-link" %>
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
 
 
 
-<%= render "devise/shared/links" %>
 
 <script>
   const visitorInput = document.querySelector("#visitor-input");
