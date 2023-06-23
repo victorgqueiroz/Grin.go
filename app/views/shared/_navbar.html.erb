@@ -51,7 +51,7 @@
             </div>
 
             <div class="my-logout-button">
-              <%= link_to "Sair", destroy_user_session_path(@user), class: "dropdown-item btn btn-flat btn-logout", data: {turbo_method: :delete} %>
+              <%= link_to "Sair", destroy_user_session_path, class: "dropdown-item btn btn-flat btn-logout", data: {turbo_method: :delete} %>
             </div>
 
           <% else %>
